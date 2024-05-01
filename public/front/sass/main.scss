@@ -1,0 +1,458 @@
+@import "./reset";
+@import "./variable";
+@import "./function";
+@import "./mixin";
+@import "./typography";
+@import "./layout";
+@import "./list";
+@import "./btn";
+@import "./banner";
+@import "./media";
+@import "./input";
+@import "./search";
+@import "./animation";
+@import "./header";
+
+.section1 {
+  padding: 8rem 0;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  .h3 {
+    font-size: 3.7rem;
+    font-weight: 400;
+    letter-spacing: 0.06rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-size: 6.6rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+    line-height: 1;
+  }
+  p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #858585;
+  }
+}
+
+.section2 {
+  position: relative;
+  img {
+    width: 100%;
+  }
+  &Main {
+    position: absolute;
+    bottom: -5rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    .container {
+      gap: 2rem;
+    }
+    &Box {
+      background: $primary-color;
+      padding: 2rem 3rem;
+      border-radius: 1rem;
+      color: #fff;
+      h2 {
+        font-size: 4.2rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.section3 {
+  padding: 15rem 0 10rem;
+  &_ {
+    position: relative;
+    grid-template-columns: 6fr 4fr;
+    gap: 4rem;
+    &_left {
+      &b {
+        position: absolute;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.61rem;
+        color: $secondary-color;
+        text-transform: uppercase;
+        writing-mode: tb;
+        transform: rotate(-180deg);
+      }
+      &- {
+        padding-left: 5rem;
+        h3 {
+          font-size: 3.8rem;
+          font-weight: 600;
+          letter-spacing: 0.02rem;
+          span {
+            background: #efedf8;
+            padding: 0.4rem 0.6rem;
+            color: $primary-color;
+            border-radius: 0.5rem;
+            line-height: 1;
+          }
+          dd {
+            display: inline;
+            border-bottom: 0.3rem solid #000;
+          }
+        }
+        p {
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: #858585;
+          margin-top: 2rem;
+          line-height: 2.5rem;
+        }
+      }
+    }
+    &_right {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &2 {
+    li {
+      color: $primary-color;
+      align-items: flex-end;
+      .h3 {
+        font-size: 8.7rem;
+        font-weight: 400;
+        letter-spacing: -0.1rem;
+      }
+      .h4 {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.section4 {
+  padding: 6rem 0;
+  h4 {
+    font-size: 9.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+    line-height: 1;
+    margin-bottom: 5rem;
+  }
+  &_ {
+    position: relative;
+    padding-top: 5rem;
+    gap: 3rem;
+    display: grid;
+    grid-template-columns: 7.5fr 3fr;
+    &22 {
+      grid-template-columns: 3fr 7.5fr;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 0.3rem;
+      background: $secondary-color;
+    }
+    &l {
+      .h5 {
+        font-size: 3rem;
+        font-weight: 600;
+        letter-spacing: 0.02rem;
+      }
+      &B {
+        position: relative;
+        width: 11.6rem;
+        height: 11.6rem;
+        border: 1px solid #000000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2rem;
+        .h6 {
+          font-size: 1.681rem;
+          font-style: italic;
+          font-weight: 600;
+          letter-spacing: 0.02rem;
+          top: 0.6rem;
+    position: relative;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #cfcfcf;
+          left: -0.5rem;
+          top: 0.5rem;
+          border-radius: 50%;
+          z-index: -1;
+        }
+      }
+      &M {
+        margin-top: 2rem;
+        gap: 2rem;
+        align-items: center;
+        &r {
+          p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 2.2rem;
+            color: #858585;
+            padding-left: 5rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+    &r {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.section11 {
+  padding: 7rem 0;
+  &__ {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    h1 {
+      line-height: 0.8;
+    }
+    .h4 {
+      font-size: 3.4rem;
+      font-weight: 400;
+      letter-spacing: 0.06rem;
+      color: $primary-color;
+      text-transform: uppercase;
+    }
+    .btn {
+      border-radius: 3rem;
+      padding: 1rem 4rem;
+      margin-top: 3rem;
+    }
+    &right {
+      &Box {
+        cursor: pointer;
+        img {
+          width: 15.4rem;
+          margin-left: auto;
+          display: block;
+          margin-bottom: 4rem;
+        }
+      }
+      p {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 2.5rem;
+        color: #858585;
+      }
+    }
+  }
+}
+
+.section12 {
+  img {
+    width: 100%;
+  }
+}
+.section13 {
+  padding: 7rem 0;
+  .container {
+    position: relative;
+  }
+  .section13Main {
+    padding-left: 5rem;
+    display: grid;
+    grid-template-columns: auto 0.9fr 0.8fr;
+    margin-top: 2rem;
+    align-items: flex-start;
+    gap: 3rem;
+    &l {
+      display: flex;
+      align-items: flex-end;
+      .h5 {
+        font-size: 9.3rem;
+        font-weight: 700;
+        letter-spacing: -0.1rem;
+        color: $primary-color;
+        background: #d9d9d9;
+        padding: 1.6rem 1.2rem 0 0.8rem;
+        border-radius: 1rem;
+        width: fit-content;
+        margin: 0;
+        line-height: 0.8;
+      }
+      .h6 {
+        padding: 0.8rem;
+        border-radius: 1rem;
+        width: fit-content;
+        margin: 0;
+        line-height: 1;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: $primary-color;
+        background: #d9d9d9;
+        margin-left: -1.2rem;
+        margin-bottom: 0rem;
+      }
+    }
+    &c {
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 2.5rem;
+      color: #858585;
+    }
+    &r {
+      .h6 {
+        font-size: 1.2rem;
+        top: 1rem;
+        position: relative;
+      }
+    }
+  }
+}
+
+.section14 {
+  padding: 1rem;
+  &Main {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    &Box {
+      position: relative;
+      img {
+        width: 100%;
+      }
+      h4 {
+        padding: 1rem 3rem;
+        width: fit-content;
+        border-radius: 3rem;
+        border: 3px solid $secondary-color;
+        background: #00000080;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 2rem;
+        color: #fff;
+        font-size: 2.3rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.section15 {
+  padding: 7rem 0;
+  text-align: center;
+  .container {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .h4 {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+  }
+  p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+    color: #858585;
+  }
+}
+.section16 {
+  padding-bottom: 10rem;
+  &Main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &l {
+      img {
+        width: 100%;
+      }
+      &b {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.61rem;
+        color: $secondary-color;
+        margin-top: 5rem;
+      }
+    }
+    &r {
+      position: relative;
+      align-self: flex-end;
+      &m {
+        width: 15rem;
+        margin: 0 auto;
+        display: block;
+      }
+      &Box {
+        background: #fff;
+        padding: 3rem 3rem 0;
+        position: relative;
+        left: -15rem;
+        border-radius: 2rem;
+        .h3 {
+          font-size: 2.4rem;
+          font-weight: 600;
+          letter-spacing: 0.02rem;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 2.2rem;
+          color: #858585;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.section17 {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  &Box {
+    position: relative;
+ 
+    .img1 {
+      width: 100%;
+      border-radius: 2rem;
+    }
+    .img2 {
+      position: absolute;
+      top: 3rem;
+      z-index: 2;
+      height: 5rem;
+      left: 2rem;
+    }
+    .h4 {
+      position: absolute;
+      bottom: 3rem;
+      left: 2rem;
+      width: 40%;
+      z-index: 9;
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02rem;
+      color: #fff;
+    }
+  }
+}
+
+@import "./footer";
+@import "./innerPage";
+@import "./responsive";

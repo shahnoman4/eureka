@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+/* ------------------Typography------------------ */
+
+@font-face {
+  font-family: "PPMori-ExtralightItalic";
+  src: url("./fonts/PPMori-ExtralightItalic.woff2") format("woff2"),
+    url("./fonts/PPMori-ExtralightItalic.woff") format("woff");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "PPMori-Extralight";
+  src: url("./fonts/PPMori-Extralight.woff2") format("woff2"),
+    url("./fonts/PPMori-Extralight.woff") format("woff");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "PPMori-Regular";
+  src: url("./fonts/PPMori-Regular.woff2") format("woff2"),
+    url("./fonts/PPMori-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMori-SemiBoldItalic";
+  src: url("./fonts/PPMori-SemiBoldItalic.woff2") format("woff2"),
+    url("./fonts/PPMori-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "PPMori-SemiBold";
+  src: url("./fonts/PPMori-SemiBold.woff2") format("woff2"),
+    url("./fonts/PPMori-SemiBold.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "PPMori-RegularItalic";
+  src: url("./fonts/PPMori-RegularItalic.woff2") format("woff2"),
+    url("./fonts/PPMori-RegularItalic.woff") format("woff");
+  font-weight: normal;
+}
+
+html {
+  font-size: 62.5%;
+  // font-size: 0.625vw;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "PPMori-Regular";
+  color: $font-color;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 1rem 0px 1rem 0px;
+}
+
+body::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: $secondary-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "PPMori-Regular";
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+
+h1 {
+  font-family: "PPMori-Regular";
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4 {
+  font-size: 3.2rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+  font-family: "PPMori-Regular";
+  color: $font-color;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  vertical-align: middle;
+}
+
+.navclose {
+  display: none;
+  color: #fff;
+  padding: 1rem;
+  text-align: right;
+}
+
+.backgroundfixed {
+  position: fixed;
+  width: 100%;
+  left: -100%;
+  top: 0;
+  background: #000000b3;
+  height: 100vh;
+  z-index: 8;
+  transition: 0.5s;
+  &.active {
+    left: 0;
+  }
+}
+
+  
+.form-control { 
+  height: 3.7rem;
+  padding: .375rem .75rem;
+  font-size: 1.2rem;
+}
+
+.cv {
+  display: block;
+}

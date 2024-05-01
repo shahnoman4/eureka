@@ -1,0 +1,102 @@
+.footer {
+  background: $primary-color;
+  padding: 10rem 0;
+  color: #fff;
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 0.6fr;
+    gap: 5rem;
+    &B {
+      .h2 {
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        margin-bottom: 3rem;
+      }
+      .h4 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: 0.4rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2rem;
+      }
+      .footermenu {
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+        li {
+          a {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+      .footernum {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        &_l {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 0.6rem;
+            background: rgba(255, 255, 255, 0.1);
+            display: grid;
+            place-items: center;
+        }
+        &_r {
+            .h5 {
+                color: #f2a057;
+                font-size: 1.3rem;
+                font-weight: 500;
+                margin: 0;
+                margin-bottom: 0;
+            }
+            a {
+                color: #fff;
+            }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 1rem;
+    align-items: center;
+    &logo {
+        img {
+            width: 26.6rem;
+        }
+    }
+    ul {
+        gap: 4rem;
+        li {
+            a {
+                color: #fff;
+            }
+        }
+    }
+  }
+}
+
+.footerbb {
+    background: $secondary-color;
+    padding: 1rem 0 .6rem   ;
+    .container {
+        display: flex;
+        justify-content: center;
+        a {
+            color: $primary-color;
+            font-weight: 600;
+            margin-left: .3rem;
+        }
+    }
+}

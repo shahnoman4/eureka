@@ -1,0 +1,10 @@
+.btn {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    &-primary {
+        background: $primary-color;
+    }
+    &-secondary  {
+        background: $secondary-color;
+    }
+}
