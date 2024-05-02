@@ -12,10 +12,10 @@
 <!-- page content -->
 <main class="indexPage">
   <section class="banner">
-    <img src="{{asset('front/webImages/banner.webp')}}" class="img1" alt="banner.webp">
+    <img src="storage/{{$data['home']->banner_image}}" class="img1" alt="banner.webp">
     <div class="bannerTxt">
-      <span>Unlock sustainable energy services</span>
-      <p class="m-0">for a brighter tomorrow</p>
+      <span>{{$data['home']->banner_text1}}</span>
+      <p class="m-0">{{$data['home']->banner_text2}}</p>
       <a href="#" class="btn btn-primary">Learn More</a>
     </div>
   </section>
@@ -80,20 +80,10 @@
   <section class="section15">
     <div class="container">
       <div class="h4">
-        Eureka Mellon is a pioneering company specializing in upstream
-        operations and services within the MENA and GCC regions.
+        {{$data['home']->section1_heading}}
       </div>
       <p>
-        Step into a world where innovation meets sustainability. Experience
-        the power of tomorrow with our cutting-edge solutions in sustainable
-        energy servicesStep into a world where innovation meets
-        sustainability. Experience the power of tomorrow with our
-        cutting-edge solutions in sustainable energy servicesStepStep into a
-        world where innovation meets sustainability. Experience the power of
-        tomorrow with our cutting-edge solutions in sustainable energy
-        servicesStep into a world where innovation meets sustainability.
-        Experience the power of tomorrow with our cutting-edge solutions in
-        sustainable energy servicesStep
+        {{$data['home']->section1_description}}
       </p>
     </div>
   </section>
@@ -101,7 +91,7 @@
     <div class="container">
       <div class="section16Main">
         <div class="section16Mainl">
-            <img src="{{asset('front/webImages/5.webp')}}" alt="">
+            <img src="storage\{{$data['home']->section2_image}}" alt="">
 
             <div class="section16Mainlb">
                 Our <br> Partners
@@ -109,8 +99,8 @@
         </div>
         <div class="section16Mainr">
             <div class="section16MainrBox">
-                <div class="h3">Arrival Energy Solutions, Volant Dynasty, and AVS Global Gravity unite to innovate, elevate, and redefine</div>
-                <p>Introducing a dynamic alliance poised to redefine the landscape of energy solutions: Business Partners Arrival Energy Solutions, Volant Dynasty, and AVS Global Gravity. This collaboration represents a convergence of expertise, innovation, and commitment to excellence in the energy sector. With Arrival Energy Solutions leading the charge in sustainable practices, Volant Dynasty driving technological advancements</p>
+                <div class="h3">{{$data['home']->section2_heading}}</div>
+                <p>{{$data['home']->section2_description}}</p>
             </div>
         </div>
       </div>

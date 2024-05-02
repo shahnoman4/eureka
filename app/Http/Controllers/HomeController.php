@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Home;
+use App\Oilga;
+use App\Technology;
 
 class HomeController extends Controller
 {
     public function home(){
-
-        return view('front.home');
+        $data['home'] = Home::findOrFail(1);
+        return view('front.home')->with('data',$data);
     }
 
     public function partner(){
@@ -23,8 +26,9 @@ class HomeController extends Controller
     }
 
     public function oilgas(){
-
-        return view('front.oilgas');
+        $data['oilgas'] = Oilga::findOrFail(1);
+        $data['technology'] = Technology::all();
+        return view('front.oilgas')->with('data',$data);
     }
 
     public function geothermal(){
