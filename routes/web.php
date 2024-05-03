@@ -18,7 +18,7 @@ Route::get('partner', [App\Http\Controllers\HomeController::class, 'partner'])->
 Route::get('career', [App\Http\Controllers\HomeController::class, 'career'])->name('career');   
 Route::get('oilgas', [App\Http\Controllers\HomeController::class, 'oilgas'])->name('oilgas');   
 Route::get('geothermal', [App\Http\Controllers\HomeController::class, 'geothermal'])->name('geothermal');   
-Route::get('energy', [App\Http\Controllers\HomeController::class, 'energy'])->name('energy');   
+Route::get('wind', [App\Http\Controllers\HomeController::class, 'wind'])->name('wind');   
 Route::get('technologies', [App\Http\Controllers\HomeController::class, 'technologies'])->name('technologies');   
 Route::get('about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');   
 

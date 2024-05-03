@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Home;
 use App\Oilga;
+use App\Geothermal;
+use App\Wind;
 use App\Technology;
+use App\About;
 
 class HomeController extends Controller
 {
@@ -27,27 +30,26 @@ class HomeController extends Controller
 
     public function oilgas(){
         $data['oilgas'] = Oilga::findOrFail(1);
-        $data['technology'] = Technology::all();
         return view('front.oilgas')->with('data',$data);
     }
 
     public function geothermal(){
-
-        return view('front.geothermal');
+        $data['geothermal'] = Geothermal::findOrFail(1);
+        return view('front.geothermal')->with('data',$data);
     }
 
-    public function energy(){
-
-        return view('front.energy');
+    public function wind(){
+        $data['wind'] = Wind::findOrFail(1);
+        return view('front.wind')->with('data',$data);
     }
 
     public function technologies(){
-
-        return view('front.technologies');
+        $data['technology'] = Technology::findOrFail(1);
+        return view('front.technologies')->with('data',$data);
     }
 
     public function about(){
-
-        return view('front.about');
+        $data['about'] = About::findOrFail(1);
+        return view('front.about')->with('data',$data);
     }
 }

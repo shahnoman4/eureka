@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Technology extends Model
+class Geothermal extends Model
 {
-	use SoftDeletes;    
+    use SoftDeletes;
 }

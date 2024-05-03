@@ -24,7 +24,7 @@
       <ul class="list d-flex">
         <li><a href="{{route('oilgas')}}">Oil & Gas</a></li>
         <li><a href="{{route('geothermal')}}">Geothermal</a></li>
-        <li><a href="{{route('energy')}}">Renewable Energy</a></li>
+        <li><a href="{{route('wind')}}">Renewable Energy</a></li>
         <li><a href="{{route('technologies')}}">Technologies</a></li>
         <li><a href="{{route('about')}}">About Us</a></li>
       </ul>
