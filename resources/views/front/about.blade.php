@@ -1,7 +1,7 @@
 @extends('front.layout.master')
 
 @section('title')
-{{ __('home.title') }}
+{{$data['about']->meta_title}}
 @endsection
 
 @section('styles')
@@ -13,32 +13,27 @@
 <main class="indexPage">
   <section class="section1">
     <div class="container">
-      <div class="h3">for a brighter tomorrow</div>
-      <h1>DIGITAL ARCHITECT OUR INNOVATION  STORY UNVEILED</h1>
+      <div class="h3">{!!$data['about']->section1_heading1!!}</div>
+      <h1>{!!$data['about']->section1_heading2!!}</h1>
       <p>
-        Explore the narrative of innovation at Outgrid, where our digital
-        architects weave a tale of strategic brilliance. Led by visionary
-        minds, our team is dedicated to crafting excellence in every aspect
-        of the digital realm, setting the stage for unparalleled success.
+        {!!$data['about']->section1_description!!}
       </p>
     </div>
   </section>
   <section class="section2">
-    <img src="{{asset('front/webImages/1.webp')}}" alt="1" />
+    <img src="storage/{{$data['about']->section2_image}}" alt="1" />
     <div class="section2Main">
       <div class="container d-flex">
         <div class="section2MainBox">
-          <h2>Our Vision</h2>
+          <h2>{!!$data['about']->section2_heading1!!}</h2>
           <p>
-            At Outgrid, we envision leading digital innovation and driving
-            success.
+            {!!$data['about']->section2_description1!!}
           </p>
         </div>
         <div class="section2MainBox">
-          <h2>Our Mission</h2>
+          <h2>{!!$data['about']->section2_heading2!!}</h2>
           <p>
-            At Outgrid, we envision leading digital innovation and driving
-            success.
+            {!!$data['about']->section2_description2!!}
           </p>
         </div>
       </div>
@@ -48,36 +43,18 @@
     <div class="container">
       <div class="section3_ grid">
         <div class="section3__left">
-          <span class="section3__leftb">Who we are</span>
+          <span class="section3__leftb">{!!$data['about']->section3_heading1!!}</span>
           <div class="section3__left-">
             <h3 class="m-0">
-              Eureka Mellon revolutionizes <span>MENA</span> and
-              <dd>GCC upstream</dd>
-              <dd>sector</dd>
-              with focus on drilling and completion
+              {!!$data['about']->section3_heading2!!}
             </h3>
             <p>
-              Step into a world where innovation meets sustainability.
-              Experience the power of tomorrow with our cutting-edge
-              solutions in sustainable energy services Step into a world
-              where innovation meets sustainability. Experience the power of
-              tomorrow with our cutting-edge solutions in sustainable energy
-              servicesStep into a world where innovation meets
-              sustainability. Experience the power of tomorrow with our
-              cutting-edge solutions in sustainable energy services Step
-              into a world where innovation meets sustainability. Experience
-              the power of tomorrow with our cutting-edge solutions in
-              sustainable energy servicesStep into a world where innovation
-              meets sustainability. Experience the power of tomorrow with
-              our cutting-edge solutions in sustainable energy services Step
-              into a world where innovation meets sustainability. Experience
-              the power of tomorrow with our cutting-edge solutions in
-              sustainable energy services
+              {!!$data['about']->section3_description!!}
             </p>
           </div>
         </div>
         <div class="section3__right">
-          <img src="{{asset('front/webImages/2.webp')}}" alt="" />
+          <img src="storage/{{$data['about']->section3_image}}" alt="" />
         </div>
       </div>
       <div class="section32">

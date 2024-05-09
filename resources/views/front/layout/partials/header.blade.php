@@ -16,7 +16,7 @@
       </div>
       <div class="header__right_topr">
         <ul class="list d-flex">
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{{route('contactus')}}">Contact</a></li>
         </ul>
       </div>
     </div>

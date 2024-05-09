@@ -33,19 +33,19 @@
         </p>
       </div>
       <div class="Innersection1_2">
-        <a href="#" class="section14MainBox">
+        <a href="{{route('innerpage', ['slug' => 'drilling-technologies'])}}" class="section14MainBox">
           <img src="{{asset('front/webImages/Drilling/1.webp')}}" alt="1.webp" />
           <h4>Drilling</h4>
         </a>
-        <a href="#" class="section14MainBox">
+        <a href="{{route('innerpage', ['slug' => 'completion-technologies'])}}" class="section14MainBox">
           <img src="{{asset('front/webImages/Drilling/2.webp')}}" alt="1.webp" />
           <h4>Completions</h4>
         </a>
-        <a href="#" class="section14MainBox">
+        <a href="{{route('innerpage', ['slug' => 'topside-technologies'])}}" class="section14MainBox">
           <img src="{{asset('front/webImages/Drilling/3.webp')}}" alt="1.webp" />
           <h4>Topside</h4>
         </a>
-        <a href="#" class="section14MainBox">
+        <a href="{{route('innerpage', ['slug' => 'landside-technologies'])}}" class="section14MainBox">
           <img src="{{asset('front/webImages/Drilling/4.webp')}}" alt="1.webp" />
           <h4>Landside</h4>
         </a>

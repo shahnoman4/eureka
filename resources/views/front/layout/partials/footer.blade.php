@@ -17,17 +17,16 @@
         <div class="footermenu">
           <ul class="list">
             <li><a href="#">Sustainability</a></li>
-            <li><a href="career.html">Careers</a></li>
-            <li><a href="#">Contact Us</a></li>
-             
-            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="{{route('career')}}">Careers</a></li>
+            <li><a href="{{route('contactus')}}">Contact Us</a></li>
+            <li><a href="{{route('faq')}}">FAQs</a></li>
           </ul>
           <ul class="list">
             <li><a href="#">Sustainability</a></li>
-            <li><a href="career.html">Careers</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="{{route('career')}}">Careers</a></li>
+            <li><a href="{{route('contactus')}}">Contact Us</a></li>
              
-            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="{{route('faq')}}">FAQs</a></li>
           </ul>
         </div>
       </div>
@@ -71,9 +70,9 @@
         </a>
       </div>
       <ul class="list d-flex">
-        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="{{route('privacypolicy')}}">Privacy Policy</a></li>
         <li>-</li>
-        <li><a href="termsandconditions.html">Terms and Conditions</a></li>
+        <li><a href="{{route('termandconditions')}}">Terms and Conditions</a></li>
       </ul>
     </div>
   </div>

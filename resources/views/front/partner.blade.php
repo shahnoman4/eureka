@@ -1,7 +1,7 @@
 @extends('front.layout.master')
 
 @section('title')
-{{ __('home.title') }}
+{{$data['partnerpage']->meta_title}}
 @endsection
 
 @section('styles')
@@ -13,83 +13,65 @@
 <main class="indexPage">
   <section class="section1">
     <div class="container">
-      <div class="h3">for a brighter tomorrow</div>
-      <h1>DIGITAL ARCHITECT OUR INNOVATION  STORY UNVEILED</h1>
+      <div class="h3">{!!$data['partnerpage']->heading_1!!}</div>
+      <h1>{{$data['partnerpage']->heading_2}}</h1>
       <p>
-        Explore the narrative of innovation at Outgrid, where our digital
-        architects weave a tale of strategic brilliance. Led by visionary
-        minds, our team is dedicated to crafting excellence in every aspect
-        of the digital realm, setting the stage for unparalleled success.
+        {!!$data['partnerpage']->description!!}
       </p>
     </div>
   </section>
   <section class="partners1">
       <div class="container">
-       <div class="partners1Main">
-           <div class="partners1Main__left">
-              <img src="{{asset('front/webImages/services2/1.webp')}}" class="img2" alt="">
-              <p>In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what's possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we're redefining the art and science of exploration.</p>
-              <a href="#" class="btn btn-secondary">Explore more</a>
-
-          </div>
-          <div class="partners1Main__right">
-              <div class="section17Box">
-                  <img src="{{asset('front/webImages/services2/11.webp')}}" class="img1" alt="">
-                  <img src="{{asset('front/webImages/services2/1.webp')}}" class="img2" alt="">
-                  <div class="h4">Arrival Energy Solutions</div>
+        @foreach($data['partner'] as $index => $row)
+          @if($index % 2 == 0) 
+           <div class="partners1Main">
+               <div class="partners1Main__left">
+                  <img src="{{asset('storage/'.$row->logo)}}" class="img2" alt="">
+                  <p>{!!$row->description!!}</p>
+                  <!-- <a href="#" class="btn btn-secondary">Explore more</a> -->
               </div>
-          </div>
-       </div>   
-       <div class="partners1Main">
-          <div class="partners1Main__right">
-              <div class="section17Box">
-                  <img src="{{asset('front/webImages/services2/13.webp')}}" class="img1" alt="">
-                  <img src="{{asset('front/webImages/services2/3.webp')}}" class="img2" alt="">
-                  <div class="h4">Digital  Solution</div>
+              <div class="partners1Main__right">
+                  <div class="section17Box">
+                      <img src="{{asset('storage/'.$row->image)}}" class="img1" alt="">
+                      <img src="{{asset('storage/'.$row->logo)}}" class="img2" alt="">
+                      <div class="h4">{!!$row->title!!}</div>
+                  </div>
               </div>
-          </div>
-          <div class="partners1Main__left">
-              <img src="{{asset('front/webImages/services2/3.webp')}}" style="width: 13rem;" class="img2" alt="">
-              <p>In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what's possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we're redefining the art and science of exploration.</p>
-              <a href="#" class="btn btn-secondary">Explore more</a>
-
-          </div>
-       </div>   
-       <div class="partners1Main">
-         
-          <div class="partners1Main__left">
-              <img src="{{asset('front/webImages/services2/2.webp')}}" class="img2" alt="">
-              <p>In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what's possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we're redefining the art and science of exploration.</p>
-              <a href="#" class="btn btn-secondary">Explore more</a>
-
-          </div>
-          <div class="partners1Main__right">
-              <div class="section17Box">
-                  <img src="{{asset('front/webImages/services2/12.webp')}}" class="img1" alt="">
-          <img src="{{asset('front/webImages/services2/2.webp')}}" class="img2" alt="">
-          <div class="h4">Digital   Solution</div>
+           </div> 
+          @else
+           <div class="partners1Main">
+              <div class="partners1Main__right">
+                  <div class="section17Box">
+                      <img src="{{asset('storage/'.$row->image)}}" class="img1" alt="">
+                      <img src="{{asset('storage/'.$row->logo)}}" class="img2" alt="">
+                      <div class="h4">{!!$row->title!!}</div>
+                  </div>
               </div>
-          </div>
-       </div>   
+              <div class="partners1Main__left">
+                  <img src="{{asset('storage/'.$row->logo)}}" style="width: 13rem;" class="img2" alt="">
+                  <p>{!!$row->description!!}</p>
+                  <!-- <a href="#" class="btn btn-secondary">Explore more</a> -->
+
+              </div>
+           </div>
+         @endif 
+        @endforeach   
       </div>
   </section>
 
   <section class="section4">
       <div class="container">
         <h4>
-          Be a Supplier to <br />
-          Eureka Mellon
+          {!!$data['partnerpage']->supplier_heading_1!!}
         </h4>
 
         <div class="section4_ section4_22">
           <div class="section4_r">
-            <img src="{{asset('front/webImages/6.webp')}}" alt="3.webp" />
+            <img src="{{asset('storage/'.$data['partnerpage']->supplier_image)}}" alt="6.webp" />
           </div>
           <div class="section4_l">
             <div class="h5">
-              As Eureka Mellon looks <br />
-              ahead, its vision remains <br />
-              unwavering
+              {!!$data['partnerpage']->supplier_heading_2!!}
             </div>
             <div class="section4_lM d-flex">
               <div class="section4_lB">
@@ -98,12 +80,7 @@
               </div>
               <div class="section4_lMr">
                 <p>
-                  to lead the transformation of the upstream sector through
-                  innovation, collaboration, and sustainable practices. With a
-                  focus on driving efficiency and maximizing value for
-                  clients, the company is poised to shape the future of energy
-                  exploration and production in the MENA and GCC regions and
-                  beyond.
+                  {!!$data['partnerpage']->supplier_description!!}
                 </p>
               </div>
             </div>
@@ -117,13 +94,10 @@
 
     <section class="section13">
       <div class="container">
-        <span class="section3__leftb">Who we are</span>
+        <span class="section3__leftb">{!!$data['about']->section3_heading1!!}</span>
         <div class="section3__left-">
           <h3 class="m-0">
-            Eureka Mellon revolutionizes <span>MENA</span> and
-            <dd>GCC upstream</dd>
-            <dd>sector</dd>
-            with focus on drilling and completion
+            {!!$data['about']->section3_heading2!!}
           </h3>
         </div>
         <div class="section13Main">
@@ -135,11 +109,7 @@
             </div>
           </div>
           <div class="section13Mainc">
-            Step into a world where innovation meets sustainability.
-            Experience the power of tomorrow with our cutting-edge solutions
-            in sustainable energy services Step into a world where innovation
-            meets sustainability. Experience the power of tomorrow with our
-            cutting-edge solutions in sustainable energy services
+            {!!$data['about']->section3_description!!}
           </div>
 
           <div class="section13Mainr">

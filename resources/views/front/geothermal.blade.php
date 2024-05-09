@@ -35,15 +35,15 @@
           <div class="h3">Geothermal</div>
         </div>
         <div class="Innersection2Main2">
-          <a href="topside.html" class="Innersection2MainBox2">
+          <a href="{{route('innerpage', ['slug' => 'topside-technologies'])}}" class="Innersection2MainBox2">
             <img src="front/webImages/solar/2.webp" alt="" />
             <div class="h3">Topside</div>
           </a>
-          <a href="completion.html" class="Innersection2MainBox2">
+          <a href="{{route('innerpage', ['slug' => 'completion-technologies'])}}" class="Innersection2MainBox2">
             <img src="front/webImages/solar/3.webp" alt="" />
             <div class="h3">Completion</div>
           </a>
-          <a href="drillingtechnologies.html" class="Innersection2MainBox2">
+          <a href="{{route('innerpage', ['slug' => 'drilling-technologies'])}}" class="Innersection2MainBox2">
             <img src="front/webImages/solar/4.webp" alt="" />
             <div class="h3">Drilling</div>
           </a>
