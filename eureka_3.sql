@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2024 at 01:07 PM
+-- Generation Time: May 10, 2024 at 02:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -345,7 +345,14 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (209, 26, 'cv', 'file', 'Cv', 0, 1, 1, 1, 1, 1, '{}', 5),
 (210, 26, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
 (211, 26, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
-(212, 26, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, '{}', 8);
+(212, 26, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, '{}', 8),
+(213, 28, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(214, 28, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, '{}', 2),
+(215, 28, 'email', 'text', 'Email', 0, 1, 1, 1, 1, 1, '{}', 3),
+(216, 28, 'number', 'text', 'Number', 0, 1, 1, 1, 1, 1, '{}', 4),
+(217, 28, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
+(218, 28, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(219, 28, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, '{}', 7);
 
 -- --------------------------------------------------------
 
@@ -397,7 +404,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (20, 'faqs', 'faqs', 'Faq', 'Faqs', NULL, 'App\\Faq', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2024-05-08 09:34:24', '2024-05-08 09:34:24'),
 (21, 'contactuspages', 'contactuspages', 'Contact us', 'Contact us', NULL, 'App\\Contactuspage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-09 00:11:24', '2024-05-09 00:13:07'),
 (22, 'inquiries', 'inquiries', 'Inquiry', 'Inquiries', NULL, 'App\\Inquiry', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-09 01:04:57', '2024-05-09 01:12:05'),
-(26, 'jobapplications', 'jobapplications', 'Job Application', 'Job Applications', NULL, 'App\\JobApplication', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-10 00:50:41', '2024-05-10 00:58:42');
+(26, 'jobapplications', 'jobapplications', 'Job Application', 'Job Applications', NULL, 'App\\JobApplication', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-10 00:50:41', '2024-05-10 00:58:42'),
+(28, 'supplierinquiries', 'supplierinquiries', 'Supplierinquiry', 'Manage Supplier inquiries', NULL, 'App\\Supplierinquiry', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-10 08:12:07', '2024-05-10 08:22:08');
 
 -- --------------------------------------------------------
 
@@ -708,24 +716,25 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2024-05-01 02:11:19', '2024-05-02 04:29:05', 'voyager.bread.index', NULL),
 (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 6, '2024-05-01 02:11:19', '2024-05-02 04:29:05', 'voyager.settings.index', NULL),
 (11, 1, 'Homes', '', '_self', NULL, NULL, 12, 1, '2024-05-02 04:26:31', '2024-05-02 07:13:10', 'voyager.homes.index', NULL),
-(12, 1, 'Manage Pages', '', '_self', 'voyager-list', '#000000', NULL, 12, '2024-05-02 04:28:54', '2024-05-10 00:57:29', NULL, ''),
+(12, 1, 'Manage Pages', '', '_self', 'voyager-list', '#000000', NULL, 13, '2024-05-02 04:28:54', '2024-05-10 08:12:23', NULL, ''),
 (13, 1, 'Oilgas', '', '_self', NULL, NULL, 12, 2, '2024-05-02 06:57:57', '2024-05-02 07:13:10', 'voyager.oilgas.index', NULL),
 (14, 1, 'Technologies', '', '_self', NULL, NULL, 12, 5, '2024-05-02 07:17:29', '2024-05-10 00:57:29', 'voyager.technologies.index', NULL),
 (16, 1, 'Geothermals', '', '_self', NULL, NULL, 12, 3, '2024-05-03 06:26:01', '2024-05-10 00:57:29', 'voyager.geothermals.index', NULL),
 (17, 1, 'Winds', '', '_self', NULL, NULL, 12, 4, '2024-05-03 06:55:27', '2024-05-10 00:57:29', 'voyager.winds.index', NULL),
 (20, 1, 'Abouts', '', '_self', NULL, NULL, 12, 6, '2024-05-03 08:42:23', '2024-05-10 00:57:29', 'voyager.abouts.index', NULL),
-(21, 1, 'Termandconditions', '', '_self', NULL, NULL, 12, 7, '2024-05-06 03:39:24', '2024-05-10 00:57:29', 'voyager.termandconditions.index', NULL),
-(22, 1, 'Privacypolicies', '', '_self', NULL, NULL, 12, 8, '2024-05-06 03:44:11', '2024-05-10 00:57:29', 'voyager.privacypolicies.index', NULL),
-(23, 1, 'Careers', '', '_self', NULL, NULL, 12, 9, '2024-05-06 04:40:46', '2024-05-10 00:57:29', 'voyager.careers.index', NULL),
-(24, 1, 'Manage Jobs', '', '_self', 'voyager-treasure', '#000000', NULL, 8, '2024-05-06 05:54:50', '2024-05-09 01:06:20', 'voyager.jobs.index', 'null'),
-(25, 1, 'Partner page', '', '_self', NULL, '#000000', 12, 10, '2024-05-07 02:58:26', '2024-05-10 00:57:29', 'voyager.partnerpage.index', 'null'),
-(26, 1, 'Manage Partners', '', '_self', 'voyager-people', '#000000', NULL, 10, '2024-05-07 02:59:19', '2024-05-10 00:57:29', 'voyager.partners.index', 'null'),
-(27, 1, 'Innerpages', '', '_self', NULL, NULL, 12, 11, '2024-05-07 07:49:06', '2024-05-10 00:57:29', 'voyager.innerpages.index', NULL),
-(28, 1, 'Main points Inner pages', '', '_self', NULL, '#000000', 12, 12, '2024-05-08 03:09:02', '2024-05-10 00:57:29', 'voyager.mainpoints.index', 'null'),
-(29, 1, 'Manage FAQs', '', '_self', 'voyager-receipt', '#000000', NULL, 11, '2024-05-08 09:34:24', '2024-05-10 00:57:29', 'voyager.faqs.index', 'null'),
-(30, 1, 'Contact us', '', '_self', NULL, '#000000', 12, 13, '2024-05-09 00:11:24', '2024-05-10 00:57:29', 'voyager.contactuspages.index', 'null'),
+(21, 1, 'Termandconditions', '', '_self', NULL, NULL, 12, 7, '2024-05-06 03:39:24', '2024-05-10 08:12:23', 'voyager.termandconditions.index', NULL),
+(22, 1, 'Privacypolicies', '', '_self', NULL, NULL, 12, 8, '2024-05-06 03:44:11', '2024-05-10 08:12:23', 'voyager.privacypolicies.index', NULL),
+(23, 1, 'Careers', '', '_self', NULL, NULL, 12, 9, '2024-05-06 04:40:46', '2024-05-10 08:12:23', 'voyager.careers.index', NULL),
+(24, 1, 'Manage Jobs', '', '_self', 'voyager-treasure', '#000000', NULL, 9, '2024-05-06 05:54:50', '2024-05-10 08:12:31', 'voyager.jobs.index', 'null'),
+(25, 1, 'Partner page', '', '_self', NULL, '#000000', 12, 10, '2024-05-07 02:58:26', '2024-05-10 08:12:23', 'voyager.partnerpage.index', 'null'),
+(26, 1, 'Manage Partners', '', '_self', 'voyager-people', '#000000', NULL, 11, '2024-05-07 02:59:19', '2024-05-10 08:12:31', 'voyager.partners.index', 'null'),
+(27, 1, 'Innerpages', '', '_self', NULL, NULL, 12, 11, '2024-05-07 07:49:06', '2024-05-10 08:12:24', 'voyager.innerpages.index', NULL),
+(28, 1, 'Main points Inner pages', '', '_self', NULL, '#000000', 12, 12, '2024-05-08 03:09:02', '2024-05-10 08:12:24', 'voyager.mainpoints.index', 'null'),
+(29, 1, 'Manage FAQs', '', '_self', 'voyager-receipt', '#000000', NULL, 12, '2024-05-08 09:34:24', '2024-05-10 08:12:31', 'voyager.faqs.index', 'null'),
+(30, 1, 'Contact us', '', '_self', NULL, '#000000', 12, 13, '2024-05-09 00:11:24', '2024-05-10 08:12:24', 'voyager.contactuspages.index', 'null'),
 (31, 1, 'Manage Inquiries', '', '_self', 'voyager-question', '#000000', NULL, 7, '2024-05-09 01:04:57', '2024-05-09 01:08:10', 'voyager.inquiries.index', 'null'),
-(35, 1, 'Manage Job Applications', '', '_self', 'voyager-treasure', '#000000', NULL, 9, '2024-05-10 00:50:41', '2024-05-10 00:57:51', 'voyager.jobapplications.index', 'null');
+(35, 1, 'Manage Job Applications', '', '_self', 'voyager-treasure', '#000000', NULL, 10, '2024-05-10 00:50:41', '2024-05-10 08:12:31', 'voyager.jobapplications.index', 'null'),
+(37, 1, 'Manage Suppliers inquiry', '', '_self', 'voyager-question', '#000000', NULL, 8, '2024-05-10 08:12:07', '2024-05-10 08:13:40', 'voyager.supplierinquiries.index', 'null');
 
 -- --------------------------------------------------------
 
@@ -1001,7 +1010,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (137, 'read_jobapplications', 'jobapplications', '2024-05-10 00:50:41', '2024-05-10 00:50:41'),
 (138, 'edit_jobapplications', 'jobapplications', '2024-05-10 00:50:41', '2024-05-10 00:50:41'),
 (139, 'add_jobapplications', 'jobapplications', '2024-05-10 00:50:41', '2024-05-10 00:50:41'),
-(140, 'delete_jobapplications', 'jobapplications', '2024-05-10 00:50:41', '2024-05-10 00:50:41');
+(140, 'delete_jobapplications', 'jobapplications', '2024-05-10 00:50:41', '2024-05-10 00:50:41'),
+(146, 'browse_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07'),
+(147, 'read_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07'),
+(148, 'edit_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07'),
+(149, 'add_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07'),
+(150, 'delete_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07');
 
 -- --------------------------------------------------------
 
@@ -1253,7 +1267,12 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (137, 1),
 (138, 1),
 (139, 1),
-(140, 1);
+(140, 1),
+(146, 1),
+(147, 1),
+(148, 1),
+(149, 1),
+(150, 1);
 
 -- --------------------------------------------------------
 
@@ -1352,6 +1371,31 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
 (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', '', '', 'text', 1, 'Admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplierinquiries`
+--
+
+CREATE TABLE `supplierinquiries` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `number` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `supplierinquiries`
+--
+
+INSERT INTO `supplierinquiries` (`id`, `name`, `email`, `number`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'almed', 'admin@email.com', '124123123', '2024-05-10 08:17:46', '2024-05-10 08:17:46', NULL),
+(2, 'dsfasdf', 'noman@quickdigitals.ae', '234234234', '2024-05-10 08:24:48', '2024-05-10 08:24:48', NULL),
+(3, 'dsfsafsadf', 'nomanshah434514@gmail.com', '324234234', '2024-05-10 08:25:14', '2024-05-10 08:25:14', NULL);
 
 -- --------------------------------------------------------
 
@@ -1665,6 +1709,12 @@ ALTER TABLE `settings`
   ADD UNIQUE KEY `settings_key_unique` (`key`);
 
 --
+-- Indexes for table `supplierinquiries`
+--
+ALTER TABLE `supplierinquiries`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `technologies`
 --
 ALTER TABLE `technologies`
@@ -1731,13 +1781,13 @@ ALTER TABLE `contactuspages`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1803,7 +1853,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1833,7 +1883,7 @@ ALTER TABLE `partners`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1858,6 +1908,12 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `supplierinquiries`
+--
+ALTER TABLE `supplierinquiries`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `technologies`
