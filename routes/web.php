@@ -29,6 +29,7 @@ Route::get('faq', [App\Http\Controllers\HomeController::class, 'faq'])->name('fa
 Route::get('contactus', [App\Http\Controllers\HomeController::class, 'contactus'])->name('contactus');   
 Route::post('contactus/store', [App\Http\Controllers\HomeController::class, 'contactusStore'])->name('contactus.store');   
 Route::post('job/apply', [App\Http\Controllers\HomeController::class, 'jobApply'])->name('job.apply');   
+Route::post('supplier', [App\Http\Controllers\HomeController::class, 'supplier'])->name('supplier');   
 
 
 Route::group(['prefix' => 'admin'], function () {

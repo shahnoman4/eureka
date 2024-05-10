@@ -71,13 +71,14 @@
           </div>
           <div class="section4_l">
             <div class="h5">
+              <p class="success" style="color:green;"></p>
               {!!$data['partnerpage']->supplier_heading_2!!}
             </div>
             <div class="section4_lM d-flex">
-              <div class="section4_lB">
+              <a href="#"  class="section4_lB" data-toggle="modal" data-target="#exampleModal">
                 <div class="h6 m-0">Supplier Form</div>
                 <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
-              </div>
+              </a>
               <div class="section4_lMr">
                 <p>
                   {!!$data['partnerpage']->supplier_description!!}
@@ -123,7 +124,72 @@
     </section>
 </main>
 <!-- /page content -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Supplier Form</h5>
+        <button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="needs-validation" action="{{route('supplier')}}" id="supplier_form" method="POST" enctype="multipart/form-data">
+          @csrf
+                        
+            <div class="modal-body">
+              <input type="text" name="name" class="form-control custom-form-control" id="name" placeholder="Full Name" required/>
+              <br />
+              <input type="text" name="number" required="required" class="form-control custom-form-control" id="number" placeholder="Number"/>
+              <br />
+              <input type="email" name="email" required="required" class="form-control custom-form-control" id="email" placeholder="Email"/>
+            </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" id="add_form_btn"><span>Submit</span></button>
+            <button type="button" class="btn btn-primary-close" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 @section('scripts')
-     
+<script type="text/javascript">
+  $('#add_form_btn').on('click', function(e) {
+  e.preventDefault();
+  var data = $('#supplier_form')[0];
+  var formData = new FormData(data);
+  $.ajax({
+  data: formData,
+  type: $('#supplier_form').attr('method'),
+  url: $('#supplier_form').attr('action'),
+  processData: false,
+  contentType: false,
+  success: function(response)
+  {
+  if(response.errors)
+  {
+  $.each(response.errors, function( index, value ) {
+    $("."+index).html(value);
+    $("."+index).fadeIn('slow', function(){
+      $("."+index).delay(3000).fadeOut(); 
+    });
+  });
+
+  }
+  else
+  {
+    $('.success').html(response);
+    $('.success').fadeIn('slow', function(){
+      $('.success').delay(9000).fadeOut(); 
+    });
+    $('#exampleModal').modal('hide');
+    $('#supplier_form')[0].reset();
+  }
+  }
+  });
+});
+</script>     
 @endsection

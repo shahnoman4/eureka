@@ -22,6 +22,7 @@ use App\Faq;
 use App\Contactuspage;
 use App\Inquiry;
 use App\JobApplication;
+use App\SupplierInquiry;
 use Validator;
 
 class HomeController extends Controller
@@ -176,6 +177,35 @@ class HomeController extends Controller
             $data->cv = $filePath;
             $data->save();
             $success = 'Applied successfully.';
+            return response()->json($success);
+           
+        }
+    }
+
+    public function supplier(Request $request)
+    {
+        $rules = array(
+            'name' => 'required',
+            'email' => 'required',
+            'number' => 'required',
+        );
+        $data = [
+            'name' => trim($request->get('name')),
+            'email' => trim($request->get('email')),
+            'number' => trim($request->get('number')),
+            ];
+        $validator = Validator::make($data,$rules);
+        if($validator->fails())
+        {
+         return  response()->json(['errors'=>$validator->errors()]);
+        }else
+        {
+            $data = New SupplierInquiry;
+            $data->name = $request->name;
+            $data->email     = $request->email;
+            $data->number     = $request->number;
+            $data->save();
+            $success = 'Inquiry send successfully.We will contact you shortly!';
             return response()->json($success);
            
         }
