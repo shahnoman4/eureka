@@ -45,7 +45,7 @@
         <div class="h2">{!!$data['career']->heading_4!!}</div>
       </div>
       <br />
-
+        <p class="success" style="color:green;text-align: center;"></p>
       <ul class="list">
         @foreach($data['job'] as $row)
         <li class="section21Main">
@@ -64,7 +64,7 @@
     <div class="container">
       <div class="section22_">
         <div class="section22__left">
-          <a class="section4_lB"  data-toggle="modal" data-target="#exampleModal">
+          <a class="section4_lB">
             <div class="h6 m-0" style="font-size: 1rem;">Submit CV</div>
             <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
           </a>
@@ -97,19 +97,19 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="needs-validation" action="{{route('job.apply')}}" id="job_form" method="POST" enctype="">
+        <form class="needs-validation" action="{{route('job.apply')}}" id="job_form" method="POST" enctype="multipart/form-data">
           @csrf
                         
             <div class="modal-body">
               <input type="text" name="name" class="form-control custom-form-control" id="name" placeholder="Full Name" required/>
               <br />
              
-              <input type="email" name="email" class="form-control custom-form-control" id="email" placeholder="Email"/>
+              <input type="email" name="email" required="required" class="form-control custom-form-control" id="email" placeholder="Email"/>
               <br />
               <span class="cv">CV *</span>
-              <input type="file" name="cv" required="">
+              <input type="file" name="cv" required="required">
             </div>
-            <input type="text" name="job_id" id="job_id" value="">
+            <input type="hidden" name="job_id" id="job_id" value="">
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary" id="add_form_btn"><span>Submit</span></button>
             <button type="button" class="btn btn-primary-close" data-dismiss="modal">Close</button>
@@ -158,7 +158,7 @@ $('#add_form_btn').on('click', function(e) {
     $('.success').fadeIn('slow', function(){
       $('.success').delay(9000).fadeOut(); 
     });
-    $('#addModel').modal('hide');
+    $('#exampleModal').modal('hide');
     $('#job_form')[0].reset();
   }
   }

@@ -41,7 +41,7 @@
                 <ul>
                     {!!$data['jobdetail']->benefits!!}
                 </ul>
-
+                <p class="success" style="color:green;"></p>
                 <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Apply for this job</a>
         </div>
     </section>
@@ -60,7 +60,7 @@
           <div class="section21Main__left">{!!$row->title!!}</div>
           <div class="section21Main__Right">
             <a class="btn btn-secondaryy" href="{{route('careerdetail', ['id' => $row->id])}}">View Details</a>
-            <a class="btn btn-primaryy"  data-toggle="modal" data-target="#exampleModal">Apply Now</a>
+            <!-- <a class="btn btn-primaryy"  data-toggle="modal" data-target="#exampleModal">Apply Now</a> -->
           </div>
         </li>
         @endforeach
@@ -72,7 +72,7 @@
     <div class="container">
       <div class="section22_">
         <div class="section22__left">
-          <a class="section4_lB"  data-toggle="modal" data-target="#exampleModal">
+          <a class="section4_lB">
             <div class="h6 m-0" style="font-size: 1rem;">Submit CV</div>
             <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
           </a>
@@ -105,18 +105,21 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="needs-validation" id="booking-form" method="POST" action="https://falcondrive.ae/car/inquire">
-          <input type="hidden" name="_token" value="qpq3Iv0gtd7ZNgwpdpZdElXEMbmT47OkBStfoDPt" autocomplete="off">              <div class="modal-body">
-            <input type="text" name="name" class="form-control custom-form-control" id="name" placeholder="Full Name" required/>
-            <br />
-           
-            <input type="email" name="email" class="form-control custom-form-control" id="email" placeholder="Email"/>
-            <br />
-            <span class="cv">CV *</span>
-            <input type="file" name="cv" required="">
-           </div>
+        <form class="needs-validation" action="{{route('job.apply')}}" id="job_form" method="POST" enctype="multipart/form-data">
+          @csrf
+                        
+            <div class="modal-body">
+              <input type="text" name="name" class="form-control custom-form-control" id="name" placeholder="Full Name" required/>
+              <br />
+             
+              <input type="email" name="email" required="required" class="form-control custom-form-control" id="email" placeholder="Email"/>
+              <br />
+              <span class="cv">CV *</span>
+              <input type="file" name="cv" required="required">
+            </div>
+            <input type="hidden" name="job_id" id="job_id" value="{{$data['career']->id}}">
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary"><span>Submit</span></button>
+            <button type="submit" class="btn btn-primary" id="add_form_btn"><span>Submit</span></button>
             <button type="button" class="btn btn-primary-close" data-dismiss="modal">Close</button>
           </div>
         </form>
@@ -126,5 +129,41 @@
 </div>
 @endsection
 @section('scripts')
-     
+<script type="text/javascript">
+ $('#add_form_btn').on('click', function(e) {
+  //var data = $('#add_form').serializeArray();
+  e.preventDefault();
+  var data = $('#job_form')[0];
+  var formData = new FormData(data);
+  $.ajax({
+  data: formData,
+  type: $('#job_form').attr('method'),
+  url: $('#job_form').attr('action'),
+  processData: false,
+  contentType: false,
+  success: function(response)
+  {
+  if(response.errors)
+  {
+  $.each(response.errors, function( index, value ) {
+    $("."+index).html(value);
+    $("."+index).fadeIn('slow', function(){
+      $("."+index).delay(3000).fadeOut(); 
+    });
+  });
+
+  }
+  else
+  {
+    $('.success').html(response);
+    $('.success').fadeIn('slow', function(){
+      $('.success').delay(9000).fadeOut(); 
+    });
+    $('#exampleModal').modal('hide');
+    $('#job_form')[0].reset();
+  }
+  }
+  });
+}); 
+</script>     
 @endsection

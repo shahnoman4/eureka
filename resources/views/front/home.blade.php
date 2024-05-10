@@ -16,18 +16,15 @@
     <div class="bannerTxt">
       <span>{{$data['home']->banner_text1}}</span>
       <p class="m-0">{{$data['home']->banner_text2}}</p>
-      <a href="#" class="btn btn-primary">Learn More</a>
+      <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
     </div>
   </section>
   <section class="section13">
     <div class="container">
-      <span class="section3__leftb">Who we are</span>
+      <span class="section3__leftb">{!!$data['about']->section3_heading1!!}</span>
       <div class="section3__left-">
         <h3 class="m-0">
-          Eureka Mellon revolutionizes <span>MENA</span> and
-          <dd>GCC upstream</dd>
-          <dd>sector</dd>
-          with focus on drilling and completion
+          {!!$data['about']->section3_heading2!!}
         </h3>
       </div>
       <div class="section13Main">
@@ -39,15 +36,11 @@
           </div>
         </div>
         <div class="section13Mainc">
-          Step into a world where innovation meets sustainability.
-          Experience the power of tomorrow with our cutting-edge solutions
-          in sustainable energy services Step into a world where innovation
-          meets sustainability. Experience the power of tomorrow with our
-          cutting-edge solutions in sustainable energy services
+          {!!$data['about']->section3_description!!}
         </div>
 
         <div class="section13Mainr">
-          <a href="about.html" class="section4_lB">
+          <a href="{{route('about')}}" class="section4_lB">
             <div class="h6 m-0">About Us</div>
             <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
           </a>
@@ -58,19 +51,19 @@
 
   <section class="section14">
     <div class="section14Main">
-      <a href="#" class="section14MainBox">
+      <a href="{{route('oilgas')}}" class="section14MainBox">
         <img src="{{asset('front/webImages/services/1.webp')}}" alt="1.webp" />
         <h4>Oil & Gas</h4>
       </a>
-      <a href="#" class="section14MainBox">
+      <a href="{{route('geothermal')}}" class="section14MainBox">
         <img src="{{asset('front/webImages/services/2.webp')}}" alt="2.webp" />
         <h4>Geothermal</h4>
       </a>
-      <a href="#" class="section14MainBox">
+      <a href="{{route('wind')}}" class="section14MainBox">
         <img src="{{asset('front/webImages/services/3.webp')}}" alt="3.webp" />
         <h4>Renewables</h4>
       </a>
-      <a href="#" class="section14MainBox">
+      <a href="{{route('technologies')}}" class="section14MainBox">
         <img src="{{asset('front/webImages/services/4.webp')}}" alt="4.webp" />
         <h4>Technologies</h4>
       </a>
@@ -107,21 +100,13 @@
     </div>
   </section>
   <section class="section17">
+    @foreach($data['partner'] as $row)
     <div class="section17Box">
-        <img src="{{asset('front/webImages/services2/11.webp')}}" class="img1" alt="">
-        <img src="{{asset('front/webImages/services2/1.webp')}}" class="img2" alt="">
-        <div class="h4">Arrival Energy Solutions</div>
+        <img src="{{asset('storage/'.$row->image)}}" class="img1" alt="">
+        <img src="{{asset('storage/'.$row->logo)}}" class="img2" alt="">
+        <div class="h4">{!!$row->title!!}</div>
     </div>
-    <div class="section17Box">
-        <img src="{{asset('front/webImages/services2/12.webp')}}" class="img1" alt="">
-        <img src="{{asset('front/webImages/services2/2.webp')}}" class="img2" alt="">
-        <div class="h4">Digital   Solution</div>
-    </div>
-    <div class="section17Box">
-        <img src="{{asset('front/webImages/services2/13.webp')}}" class="img1" alt="">
-        <img src="{{asset('front/webImages/services2/3.webp')}}" class="img2" alt="">
-        <div class="h4">Digital  Solution</div>
-    </div>
+    @endforeach
   </section>
   <section class="section4">
     <div class="container">
@@ -138,10 +123,10 @@
             unwavering
           </div>
           <div class="section4_lM d-flex">
-            <div class="section4_lB">
+            <a href="{{route('career')}}" class="section4_lB">
               <div class="h6 m-0">Career</div>
               <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
-            </div>
+            </a>
             <div class="section4_lMr">
               <p>
                 to lead the transformation of the upstream sector through

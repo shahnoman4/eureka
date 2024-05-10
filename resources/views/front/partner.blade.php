@@ -113,7 +113,7 @@
           </div>
 
           <div class="section13Mainr">
-            <a href="about.html" class="section4_lB">
+            <a href="{{route('about')}}" class="section4_lB">
               <div class="h6 m-0">About Us</div>
               <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
             </a>

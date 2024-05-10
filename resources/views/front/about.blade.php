@@ -99,7 +99,7 @@
             unwavering
           </div>
           <div class="section4_lM d-flex">
-            <a href="career.html" class="section4_lB">
+            <a href="{{route('career')}}" class="section4_lB">
               <div class="h6 m-0">Career</div>
               <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
             </a>

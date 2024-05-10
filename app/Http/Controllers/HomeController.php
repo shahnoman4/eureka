@@ -21,12 +21,15 @@ use App\Mainpoint;
 use App\Faq;
 use App\Contactuspage;
 use App\Inquiry;
+use App\JobApplication;
 use Validator;
 
 class HomeController extends Controller
 {
     public function home(){
         $data['home'] = Home::findOrFail(1);
+        $data['about'] = About::findOrFail(1);
+        $data['partner'] = Partner::all();
         return view('front.home')->with('data',$data);
     }
 
@@ -145,16 +148,15 @@ class HomeController extends Controller
 
     public function jobApply(Request $request)
     {
-        //dd($request->all());
         $rules = array(
             'name' => 'required',
             'email' => 'required',
-            'cv' => 'required',
+            'cv' => 'required|file|mimes:jpeg,png,pdf|max:2048',
         );
         $data = [
             'name' => trim($request->get('name')),
             'email' => trim($request->get('email')),
-            'cv' => trim($request->get('cv')),
+            'cv' => $request->cv,
             ];
         $validator = Validator::make($data,$rules);
         if($validator->fails())
@@ -162,10 +164,16 @@ class HomeController extends Controller
          return  response()->json(['errors'=>$validator->errors()]);
         }else
         {
-            $data = New Inquiry;
+            $data = New JobApplication;
+            $data->job_id = $request->job_id;
             $data->name = $request->name;
             $data->email     = $request->email;
-            $data->cv = $request->cv;
+
+            $file = $request->file('cv');
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            $filePath = $file->storeAs('uploads', $fileName, 'public');
+
+            $data->cv = $filePath;
             $data->save();
             $success = 'Applied successfully.';
             return response()->json($success);
