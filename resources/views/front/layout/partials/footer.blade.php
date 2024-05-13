@@ -16,17 +16,17 @@
         <div class="h4">Links</div>
         <div class="footermenu">
           <ul class="list">
-            <li><a href="#">Sustainability</a></li>
+            <li><a href="{{route('partner')}}">Partners</a></li>
             <li><a href="{{route('career')}}">Careers</a></li>
             <li><a href="{{route('contactus')}}">Contact Us</a></li>
             <li><a href="{{route('faq')}}">FAQs</a></li>
           </ul>
           <ul class="list">
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="{{route('career')}}">Careers</a></li>
-            <li><a href="{{route('contactus')}}">Contact Us</a></li>
+            <li><a href="{{route('oilgas')}}">Oil & Gas</a></li>
+            <li><a href="{{route('geothermal')}}">Geothermal</a></li>
+            <li><a href="{{route('wind')}}">Renewable Energy</a></li>
              
-            <li><a href="{{route('faq')}}">FAQs</a></li>
+            <li><a href="{{route('technologies')}}">Technologies</a></li>
           </ul>
         </div>
       </div>
