@@ -36,7 +36,10 @@
           </div>
         </div>
         <div class="section13Mainc">
-          {!!$data['about']->section3_description!!}
+          @php
+                $aboutText = $data['about']->section3_description;
+                echo strlen($aboutText) > 400 ? substr($aboutText, 0, 400) . '...' : $aboutText;
+            @endphp
         </div>
 
         <div class="section13Mainr">

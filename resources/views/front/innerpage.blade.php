@@ -14,8 +14,8 @@
   <section class="InnerBanner">
       <img src="{{asset('storage/'.$data['innerpage']->banner_image)}}" class="img1" alt="drillingbanner.webp">
       <ul class="list d-flex">
-          <li><a href="#">Home &nbsp;-</a></li>
-          <li><a href="#">Oil  & Gas &nbsp;-</a></li>
+          <li><a href="{{route('home')}}">Home &nbsp;-</a></li>
+          <li><a href="{{route('oilgas')}}">Oil  & Gas &nbsp;-</a></li>
           <li><span class="currentPage">{!!trim(str_replace('Technologies','',$data['innerpage']->page_name))!!}</span></li>
       </ul>
   </section>
