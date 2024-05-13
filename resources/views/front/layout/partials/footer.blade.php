@@ -77,7 +77,7 @@
 <div class="footerbb">
   <div class="container">
     © All Right Reserved By
-    <a href="https://quickdigitals.ae/" class="footer-rights"
+    <a href="https://quickdigitals.ae/" target="_blank" class="footer-rights"
       >Quick Digitals.</a
     >
   </div>
