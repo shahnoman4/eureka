@@ -97,7 +97,13 @@ class HomeController extends Controller
     //inner pages
     public function innerpage($slug){
         $data['innerpage'] = Innerpage::where('slug',$slug)->first();
-        return view('front.innerpage')->with('data',$data);
+        if($data['innerpage']){
+          return view('front.innerpage')->with('data',$data);
+        }else{
+            abort(404);
+        }
+        
+        
     }
 
     public function faq(){
