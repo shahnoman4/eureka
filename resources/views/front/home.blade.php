@@ -114,16 +114,13 @@
   <section class="section4">
     <div class="container">
       <h4>
-        Be Part of <br />
-        Eureka Mellon
+        {!!$data['career']->heading_1!!}
       </h4>
 
       <div class="section4_">
         <div class="section4_l">
           <div class="h5">
-            As Eureka Mellon looks <br />
-            ahead, its vision remains <br />
-            unwavering
+            {!!$data['career']->heading_2!!}
           </div>
           <div class="section4_lM d-flex">
             <a href="{{route('career')}}" class="section4_lB">
@@ -132,12 +129,7 @@
             </a>
             <div class="section4_lMr">
               <p>
-                to lead the transformation of the upstream sector through
-                innovation, collaboration, and sustainable practices. With a
-                focus on driving efficiency and maximizing value for
-                clients, the company is poised to shape the future of energy
-                exploration and production in the MENA and GCC regions and
-                beyond.
+                {!!$data['career']->description_1!!}
               </p>
             </div>
           </div>
