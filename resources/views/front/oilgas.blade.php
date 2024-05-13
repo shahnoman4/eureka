@@ -1,5 +1,8 @@
 @extends('front.layout.master')
 
+@section('description')
+{{$data['oilgas']->meta_description}}
+@endsection
 @section('title')
 {{$data['oilgas']->meta_title}}
 @endsection

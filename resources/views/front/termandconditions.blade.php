@@ -1,5 +1,7 @@
 @extends('front.layout.master')
-
+@section('description')
+{{$data['termandconditions']->meta_description}}
+@endsection
 @section('title')
 {{$data['termandconditions']->meta_title}}
 @endsection

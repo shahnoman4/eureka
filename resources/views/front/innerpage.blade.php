@@ -1,5 +1,8 @@
 @extends('front.layout.master')
 
+@section('description')
+{{$data['innerpage']->meta_description}}
+@endsection
 @section('title')
 {{$data['innerpage']->meta_title}}
 @endsection

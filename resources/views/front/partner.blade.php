@@ -1,5 +1,8 @@
 @extends('front.layout.master')
 
+@section('description')
+{{$data['partnerpage']->meta_description}}
+@endsection
 @section('title')
 {{$data['partnerpage']->meta_title}}
 @endsection
@@ -110,10 +113,10 @@
             </div>
           </div>
           <div class="section13Mainc">
-            @php
+          @php
             $aboutText = $data['about']->section3_description;
             echo strlen($aboutText) > 400 ? substr($aboutText, 0, 400) . '...' : $aboutText;
-        @endphp
+          @endphp
           </div>
 
           <div class="section13Mainr">
@@ -142,7 +145,7 @@
           @csrf
                         
             <div class="modal-body">
-              <input type="text" name="name" class="form-control custom-form-control" id="name" placeholder="Full Name" required/>
+              <input type="text" name="name" class="form-control custom-form-control" id="name" placeholder="Full Name" required="required"/>
               <br />
               <input type="text" name="number" required="required" class="form-control custom-form-control" id="number" placeholder="Number"/>
               <br />

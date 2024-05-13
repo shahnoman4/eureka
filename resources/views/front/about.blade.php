@@ -1,8 +1,12 @@
 @extends('front.layout.master')
 
+@section('description')
+{{$data['about']->meta_description}}
+@endsection
 @section('title')
 {{$data['about']->meta_title}}
 @endsection
+
 
 @section('styles')
 

@@ -1,5 +1,8 @@
 @extends('front.layout.master')
 
+@section('description')
+{{$data['geothermal']->meta_description}}
+@endsection
 @section('title')
 {{$data['geothermal']->meta_title}}
 @endsection

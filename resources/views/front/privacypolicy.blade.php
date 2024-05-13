@@ -1,5 +1,7 @@
 @extends('front.layout.master')
-
+@section('description')
+{{$data['privacypolicy']->meta_description}}
+@endsection
 @section('title')
 {{$data['privacypolicy']->meta_title}}
 @endsection

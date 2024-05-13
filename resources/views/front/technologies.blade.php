@@ -1,5 +1,7 @@
 @extends('front.layout.master')
-
+@section('description')
+{{$data['technology']->meta_description}}
+@endsection
 @section('title')
 {{$data['technology']->meta_title}}
 @endsection

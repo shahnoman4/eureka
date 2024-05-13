@@ -1,5 +1,7 @@
 @extends('front.layout.master')
-
+@section('description')
+Eureka Mellon
+@endsection
 @section('title')
 Eureka Mellon
 @endsection

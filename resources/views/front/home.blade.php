@@ -1,5 +1,8 @@
 @extends('front.layout.master')
 
+@section('description')
+{{ __('home.title') }}
+@endsection
 @section('title')
 {{ __('home.title') }}
 @endsection

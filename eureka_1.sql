@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2024 at 02:58 PM
+-- Generation Time: May 13, 2024 at 12:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,6 +54,35 @@ CREATE TABLE `abouts` (
 
 INSERT INTO `abouts` (`id`, `meta_title`, `meta_description`, `section1_heading1`, `section1_description`, `section2_image`, `section2_heading1`, `section2_description1`, `section2_heading2`, `section2_description2`, `section3_heading1`, `section3_heading2`, `section3_description`, `section3_image`, `created_at`, `updated_at`, `deleted_at`, `section1_heading2`) VALUES
 (1, 'Eureka Mellon', 'Eureka Mellon', 'for a brighter tomorrow', 'Explore the narrative of innovation at Outgrid, where our digital\r\n            architects weave a tale of strategic brilliance. Led by visionary\r\n            minds, our team is dedicated to crafting excellence in every aspect\r\n            of the digital realm, setting the stage for unparalleled success.', 'abouts\\May2024\\UwW2TqwSvdinEFOzCqvI.webp', 'Our Vision', 'At Outgrid, we envision leading digital innovation and driving\r\n                success.', 'Our Mission', 'At Outgrid, we envision leading digital innovation and driving\r\n                success.', 'Who we are', 'Eureka Mellon revolutionizes <span>MENA</span> and                   <dd>GCC upstream</dd>                   <dd>sector</dd>                   with focus on drilling and completion', 'Step into a world where innovation meets sustainability.\r\n                  Experience the power of tomorrow with our cutting-edge\r\n                  solutions in sustainable energy services Step into a world\r\n                  where innovation meets sustainability. Experience the power of\r\n                  tomorrow with our cutting-edge solutions in sustainable energy\r\n                  servicesStep into a world where innovation meets\r\n                  sustainability. Experience the power of tomorrow with our\r\n                  cutting-edge solutions in sustainable energy services Step\r\n                  into a world where innovation meets sustainability. Experience\r\n                  the power of tomorrow with our cutting-edge solutions in\r\n                  sustainable energy servicesStep into a world where innovation\r\n                  meets sustainability. Experience the power of tomorrow with\r\n                  our cutting-edge solutions in sustainable energy services Step\r\n                  into a world where innovation meets sustainability. Experience\r\n                  the power of tomorrow with our cutting-edge solutions in\r\n                  sustainable energy services', 'abouts\\May2024\\VRCyADqHFE0eg5dMOtZ8.webp', '2024-05-03 09:03:39', '2024-05-03 09:03:39', NULL, 'DIGITAL ARCHITECT OUR INNOVATION  STORY UNVEILED');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activity_log`
+--
+
+CREATE TABLE `activity_log` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `log_name` varchar(255) DEFAULT NULL,
+  `description` text NOT NULL,
+  `subject_type` varchar(255) DEFAULT NULL,
+  `event` varchar(255) DEFAULT NULL,
+  `subject_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `causer_type` varchar(255) DEFAULT NULL,
+  `causer_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `properties` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`properties`)),
+  `batch_uuid` char(36) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `activity_log`
+--
+
+INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `event`, `subject_id`, `causer_type`, `causer_id`, `properties`, `batch_uuid`, `created_at`, `updated_at`) VALUES
+(1, 'default', 'updated', 'App\\Footer', 'updated', 1, 'App\\Models\\User', 1, '[]', NULL, '2024-05-13 01:18:07', '2024-05-13 01:18:07'),
+(2, 'default', 'updated', 'App\\Footer', 'updated', 1, 'App\\Models\\User', 1, '[]', NULL, '2024-05-13 01:20:20', '2024-05-13 01:20:20');
 
 -- --------------------------------------------------------
 
@@ -352,7 +381,15 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (216, 28, 'number', 'text', 'Number', 0, 1, 1, 1, 1, 1, '{}', 4),
 (217, 28, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
 (218, 28, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
-(219, 28, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, '{}', 7);
+(219, 28, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, '{}', 7),
+(220, 29, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(221, 29, 'description_1', 'text_area', 'Description 1', 0, 1, 1, 1, 1, 1, '{}', 2),
+(222, 29, 'description_2', 'text_area', 'Description 2', 0, 1, 1, 1, 1, 1, '{}', 3),
+(223, 29, 'contact_no', 'text', 'Contact No', 0, 1, 1, 1, 1, 1, '{}', 4),
+(224, 29, 'contact_email', 'text', 'Contact Email', 0, 1, 1, 1, 1, 1, '{}', 5),
+(225, 29, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
+(226, 29, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
+(227, 29, 'deleted_at', 'timestamp', 'Deleted At', 0, 1, 1, 1, 1, 1, '{}', 8);
 
 -- --------------------------------------------------------
 
@@ -405,7 +442,8 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (21, 'contactuspages', 'contactuspages', 'Contact us', 'Contact us', NULL, 'App\\Contactuspage', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-09 00:11:24', '2024-05-09 00:13:07'),
 (22, 'inquiries', 'inquiries', 'Inquiry', 'Inquiries', NULL, 'App\\Inquiry', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-09 01:04:57', '2024-05-09 01:12:05'),
 (26, 'jobapplications', 'jobapplications', 'Job Application', 'Job Applications', NULL, 'App\\JobApplication', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-10 00:50:41', '2024-05-10 00:58:42'),
-(28, 'supplierinquiries', 'supplierinquiries', 'Supplierinquiry', 'Manage Supplier inquiries', NULL, 'App\\Supplierinquiry', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-10 08:12:07', '2024-05-10 08:22:08');
+(28, 'supplierinquiries', 'supplierinquiries', 'Supplierinquiry', 'Manage Supplier inquiries', NULL, 'App\\Supplierinquiry', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2024-05-10 08:12:07', '2024-05-10 08:22:08'),
+(29, 'footers', 'footers', 'Footer', 'Footers', NULL, 'App\\Footer', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2024-05-13 00:23:43', '2024-05-13 00:23:43');
 
 -- --------------------------------------------------------
 
@@ -445,6 +483,30 @@ CREATE TABLE `faqs` (
 INSERT INTO `faqs` (`id`, `question`, `ans`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Typhoon Bi-Directional Dogleg Drilling Reamer', 'In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what\'s possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we\'re redefining the art and science of exploration.In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what\'s possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we\'re redefining the art and science of exploration.In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what\'s possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we\'re redefining the art and science of exploration.', '2024-05-08 09:35:58', '2024-05-08 09:35:58', NULL),
 (2, 'Landslide Downhole Mudmotor', 'In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what\'s possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we\'re redefining the art and science of exploration.In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what\'s possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we\'re redefining the art and science of exploration.In the realm of drilling, precision is paramount. With state-of-the-art technology and unmatched expertise, [Company Name] is at the forefront of pushing the boundaries of what\'s possible. Our innovative drilling techniques maximize efficiency, minimize environmental impact, and unlock new reservoirs previously deemed inaccessible. From conventional to unconventional drilling, we\'re redefining the art and science of exploration.', '2024-05-08 09:36:19', '2024-05-08 09:36:19', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `footers`
+--
+
+CREATE TABLE `footers` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `description_1` text DEFAULT NULL,
+  `description_2` text DEFAULT NULL,
+  `contact_no` varchar(255) DEFAULT NULL,
+  `contact_email` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `footers`
+--
+
+INSERT INTO `footers` (`id`, `description_1`, `description_2`, `contact_no`, `contact_email`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Transformation of the upstream sector through innovation,\r\n          collaboration, and sustainable practices.', 'With a focus on driving efficiency and maximizing value for\r\n          clients, the company is poised to shape the future of energy\r\n          exploration and production in the MENA and GCC regions and beyond.', '+971565112065324', 'info@eureka-mellon.com', '2024-05-13 00:25:00', '2024-05-13 01:20:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -717,24 +779,25 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 6, '2024-05-01 02:11:19', '2024-05-02 04:29:05', 'voyager.settings.index', NULL),
 (11, 1, 'Homes', '', '_self', NULL, NULL, 12, 1, '2024-05-02 04:26:31', '2024-05-02 07:13:10', 'voyager.homes.index', NULL),
 (12, 1, 'Manage Pages', '', '_self', 'voyager-list', '#000000', NULL, 13, '2024-05-02 04:28:54', '2024-05-10 08:12:23', NULL, ''),
-(13, 1, 'Oilgas', '', '_self', NULL, NULL, 12, 2, '2024-05-02 06:57:57', '2024-05-02 07:13:10', 'voyager.oilgas.index', NULL),
+(13, 1, 'Oil & Gas', '', '_self', NULL, '#000000', 12, 2, '2024-05-02 06:57:57', '2024-05-10 09:05:42', 'voyager.oilgas.index', 'null'),
 (14, 1, 'Technologies', '', '_self', NULL, NULL, 12, 5, '2024-05-02 07:17:29', '2024-05-10 00:57:29', 'voyager.technologies.index', NULL),
 (16, 1, 'Geothermals', '', '_self', NULL, NULL, 12, 3, '2024-05-03 06:26:01', '2024-05-10 00:57:29', 'voyager.geothermals.index', NULL),
 (17, 1, 'Winds', '', '_self', NULL, NULL, 12, 4, '2024-05-03 06:55:27', '2024-05-10 00:57:29', 'voyager.winds.index', NULL),
-(20, 1, 'Abouts', '', '_self', NULL, NULL, 12, 6, '2024-05-03 08:42:23', '2024-05-10 00:57:29', 'voyager.abouts.index', NULL),
-(21, 1, 'Termandconditions', '', '_self', NULL, NULL, 12, 7, '2024-05-06 03:39:24', '2024-05-10 08:12:23', 'voyager.termandconditions.index', NULL),
-(22, 1, 'Privacypolicies', '', '_self', NULL, NULL, 12, 8, '2024-05-06 03:44:11', '2024-05-10 08:12:23', 'voyager.privacypolicies.index', NULL),
+(20, 1, 'About Us', '', '_self', NULL, '#000000', 12, 6, '2024-05-03 08:42:23', '2024-05-10 09:06:07', 'voyager.abouts.index', 'null'),
+(21, 1, 'Terms & conditions', '', '_self', NULL, '#000000', 12, 7, '2024-05-06 03:39:24', '2024-05-10 09:06:27', 'voyager.termandconditions.index', 'null'),
+(22, 1, 'Privacy Policies', '', '_self', NULL, '#000000', 12, 8, '2024-05-06 03:44:11', '2024-05-10 09:06:45', 'voyager.privacypolicies.index', 'null'),
 (23, 1, 'Careers', '', '_self', NULL, NULL, 12, 9, '2024-05-06 04:40:46', '2024-05-10 08:12:23', 'voyager.careers.index', NULL),
 (24, 1, 'Manage Jobs', '', '_self', 'voyager-treasure', '#000000', NULL, 9, '2024-05-06 05:54:50', '2024-05-10 08:12:31', 'voyager.jobs.index', 'null'),
 (25, 1, 'Partner page', '', '_self', NULL, '#000000', 12, 10, '2024-05-07 02:58:26', '2024-05-10 08:12:23', 'voyager.partnerpage.index', 'null'),
 (26, 1, 'Manage Partners', '', '_self', 'voyager-people', '#000000', NULL, 11, '2024-05-07 02:59:19', '2024-05-10 08:12:31', 'voyager.partners.index', 'null'),
-(27, 1, 'Innerpages', '', '_self', NULL, NULL, 12, 11, '2024-05-07 07:49:06', '2024-05-10 08:12:24', 'voyager.innerpages.index', NULL),
+(27, 1, 'Inner Pages', '', '_self', NULL, '#000000', 12, 11, '2024-05-07 07:49:06', '2024-05-10 09:07:21', 'voyager.innerpages.index', 'null'),
 (28, 1, 'Main points Inner pages', '', '_self', NULL, '#000000', 12, 12, '2024-05-08 03:09:02', '2024-05-10 08:12:24', 'voyager.mainpoints.index', 'null'),
 (29, 1, 'Manage FAQs', '', '_self', 'voyager-receipt', '#000000', NULL, 12, '2024-05-08 09:34:24', '2024-05-10 08:12:31', 'voyager.faqs.index', 'null'),
-(30, 1, 'Contact us', '', '_self', NULL, '#000000', 12, 13, '2024-05-09 00:11:24', '2024-05-10 08:12:24', 'voyager.contactuspages.index', 'null'),
+(30, 1, 'Contact Us', '', '_self', NULL, '#000000', 12, 13, '2024-05-09 00:11:24', '2024-05-10 09:07:43', 'voyager.contactuspages.index', 'null'),
 (31, 1, 'Manage Inquiries', '', '_self', 'voyager-question', '#000000', NULL, 7, '2024-05-09 01:04:57', '2024-05-09 01:08:10', 'voyager.inquiries.index', 'null'),
 (35, 1, 'Manage Job Applications', '', '_self', 'voyager-treasure', '#000000', NULL, 10, '2024-05-10 00:50:41', '2024-05-10 08:12:31', 'voyager.jobapplications.index', 'null'),
-(37, 1, 'Manage Suppliers inquiry', '', '_self', 'voyager-question', '#000000', NULL, 8, '2024-05-10 08:12:07', '2024-05-10 08:13:40', 'voyager.supplierinquiries.index', 'null');
+(37, 1, 'Manage Suppliers inquiry', '', '_self', 'voyager-question', '#000000', NULL, 8, '2024-05-10 08:12:07', '2024-05-10 08:13:40', 'voyager.supplierinquiries.index', 'null'),
+(38, 1, 'Footers', '', '_self', NULL, NULL, 12, 14, '2024-05-13 00:23:43', '2024-05-13 00:24:07', 'voyager.footers.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -776,7 +839,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (21, '2018_03_14_000000_add_details_to_data_types_table', 1),
 (22, '2018_03_16_000000_make_settings_value_nullable', 1),
 (23, '2019_08_19_000000_create_failed_jobs_table', 1),
-(24, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(24, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(25, '2024_05_13_050331_create_activity_log_table', 2),
+(26, '2024_05_13_050332_add_event_column_to_activity_log_table', 2),
+(27, '2024_05_13_050333_add_batch_uuid_column_to_activity_log_table', 2);
 
 -- --------------------------------------------------------
 
@@ -1015,7 +1081,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (147, 'read_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07'),
 (148, 'edit_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07'),
 (149, 'add_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07'),
-(150, 'delete_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07');
+(150, 'delete_supplierinquiries', 'supplierinquiries', '2024-05-10 08:12:07', '2024-05-10 08:12:07'),
+(151, 'browse_footers', 'footers', '2024-05-13 00:23:43', '2024-05-13 00:23:43'),
+(152, 'read_footers', 'footers', '2024-05-13 00:23:43', '2024-05-13 00:23:43'),
+(153, 'edit_footers', 'footers', '2024-05-13 00:23:43', '2024-05-13 00:23:43'),
+(154, 'add_footers', 'footers', '2024-05-13 00:23:43', '2024-05-13 00:23:43'),
+(155, 'delete_footers', 'footers', '2024-05-13 00:23:43', '2024-05-13 00:23:43');
 
 -- --------------------------------------------------------
 
@@ -1059,9 +1130,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (12, 2),
 (13, 1),
 (13, 2),
-(14, 1),
 (14, 2),
-(15, 1),
 (15, 2),
 (16, 1),
 (16, 2),
@@ -1069,9 +1138,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (17, 2),
 (18, 1),
 (18, 2),
-(19, 1),
 (19, 2),
-(20, 1),
 (20, 2),
 (21, 1),
 (21, 2),
@@ -1079,9 +1146,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (22, 2),
 (23, 1),
 (23, 2),
-(24, 1),
 (24, 2),
-(25, 1),
 (25, 2),
 (26, 1),
 (26, 2),
@@ -1089,9 +1154,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (27, 2),
 (28, 1),
 (28, 2),
-(29, 1),
 (29, 2),
-(30, 1),
 (30, 2),
 (31, 1),
 (31, 2),
@@ -1099,9 +1162,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (32, 2),
 (33, 1),
 (33, 2),
-(34, 1),
 (34, 2),
-(35, 1),
 (35, 2),
 (36, 1),
 (36, 2),
@@ -1109,9 +1170,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (37, 2),
 (38, 1),
 (38, 2),
-(39, 1),
 (39, 2),
-(40, 1),
 (40, 2),
 (41, 1),
 (41, 2),
@@ -1119,9 +1178,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (42, 2),
 (43, 1),
 (43, 2),
-(44, 1),
 (44, 2),
-(45, 1),
 (45, 2),
 (46, 1),
 (46, 2),
@@ -1129,9 +1186,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (47, 2),
 (48, 1),
 (48, 2),
-(49, 1),
 (49, 2),
-(50, 1),
 (50, 2),
 (56, 1),
 (56, 2),
@@ -1139,9 +1194,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (57, 2),
 (58, 1),
 (58, 2),
-(59, 1),
 (59, 2),
-(60, 1),
 (60, 2),
 (61, 1),
 (61, 2),
@@ -1149,9 +1202,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (62, 2),
 (63, 1),
 (63, 2),
-(64, 1),
 (64, 2),
-(65, 1),
 (65, 2),
 (66, 1),
 (66, 2),
@@ -1159,9 +1210,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (67, 2),
 (68, 1),
 (68, 2),
-(69, 1),
 (69, 2),
-(70, 1),
 (70, 2),
 (71, 1),
 (71, 2),
@@ -1169,9 +1218,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (72, 2),
 (73, 1),
 (73, 2),
-(74, 1),
 (74, 2),
-(75, 1),
 (75, 2),
 (76, 1),
 (76, 2),
@@ -1179,9 +1226,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (77, 2),
 (78, 1),
 (78, 2),
-(79, 1),
 (79, 2),
-(80, 1),
 (80, 2),
 (81, 1),
 (81, 2),
@@ -1189,9 +1234,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (82, 2),
 (83, 1),
 (83, 2),
-(84, 1),
 (84, 2),
-(85, 1),
 (85, 2),
 (86, 1),
 (86, 2),
@@ -1199,9 +1242,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (87, 2),
 (88, 1),
 (88, 2),
-(89, 1),
 (89, 2),
-(90, 1),
 (90, 2),
 (91, 1),
 (91, 2),
@@ -1209,9 +1250,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (92, 2),
 (93, 1),
 (93, 2),
-(94, 1),
 (94, 2),
-(95, 1),
 (95, 2),
 (96, 1),
 (96, 2),
@@ -1219,9 +1258,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (97, 2),
 (98, 1),
 (98, 2),
-(99, 1),
 (99, 2),
-(100, 1),
 (100, 2),
 (101, 1),
 (101, 2),
@@ -1229,9 +1266,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (102, 2),
 (103, 1),
 (103, 2),
-(104, 1),
 (104, 2),
-(105, 1),
 (105, 2),
 (106, 1),
 (106, 2),
@@ -1239,9 +1274,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (107, 2),
 (108, 1),
 (108, 2),
-(109, 1),
 (109, 2),
-(110, 1),
 (110, 2),
 (111, 1),
 (111, 2),
@@ -1249,9 +1282,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (112, 2),
 (113, 1),
 (113, 2),
-(114, 1),
 (114, 2),
-(115, 1),
 (115, 2),
 (116, 1),
 (116, 2),
@@ -1259,20 +1290,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (117, 2),
 (118, 1),
 (118, 2),
-(119, 1),
 (119, 2),
-(120, 1),
 (120, 2),
 (136, 1),
 (137, 1),
 (138, 1),
-(139, 1),
-(140, 1),
 (146, 1),
 (147, 1),
 (148, 1),
-(149, 1),
-(150, 1);
+(151, 1),
+(152, 1),
+(153, 1);
 
 -- --------------------------------------------------------
 
@@ -1489,7 +1517,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Super admin', 'admin@email.com', 'users/default.png', NULL, '$2y$10$ryvOhCh5HpqFBwwNs/yfe.uR11lw.Thj36.z2PGk44fTAOd/0C//O', 'DfDsYKMYkENEwSdMs5etAmmH1ENk7d8sXRuDtmOfUczvv0saUOlTidqqOptS', NULL, '2024-05-01 02:23:03', '2024-05-01 02:23:04');
+(1, 1, 'Super admin', 'admin@email.com', 'users/default.png', NULL, '$2y$10$ryvOhCh5HpqFBwwNs/yfe.uR11lw.Thj36.z2PGk44fTAOd/0C//O', '2nDf5y9NYW5WWVdzUzp6enfsChJRmpFds24cR4HiMjqK6JTY52PB0ee1rjFY', NULL, '2024-05-01 02:23:03', '2024-05-01 02:23:04');
 
 -- --------------------------------------------------------
 
@@ -1540,6 +1568,15 @@ ALTER TABLE `abouts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `activity_log`
+--
+ALTER TABLE `activity_log`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `subject` (`subject_type`,`subject_id`),
+  ADD KEY `causer` (`causer_type`,`causer_id`),
+  ADD KEY `activity_log_log_name_index` (`log_name`);
+
+--
 -- Indexes for table `careers`
 --
 ALTER TABLE `careers`
@@ -1577,6 +1614,12 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `faqs`
 --
 ALTER TABLE `faqs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `footers`
+--
+ALTER TABLE `footers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1766,6 +1809,12 @@ ALTER TABLE `abouts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `activity_log`
+--
+ALTER TABLE `activity_log`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `careers`
 --
 ALTER TABLE `careers`
@@ -1781,13 +1830,13 @@ ALTER TABLE `contactuspages`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1800,6 +1849,12 @@ ALTER TABLE `failed_jobs`
 --
 ALTER TABLE `faqs`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `footers`
+--
+ALTER TABLE `footers`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `geothermals`
@@ -1853,13 +1908,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `oilgas`
@@ -1883,7 +1938,7 @@ ALTER TABLE `partners`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
