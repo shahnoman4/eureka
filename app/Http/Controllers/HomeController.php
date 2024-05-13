@@ -30,6 +30,7 @@ class HomeController extends Controller
     public function home(){
         $data['home'] = Home::findOrFail(1);
         $data['about'] = About::findOrFail(1);
+        $data['career'] = Career::findOrFail(1);
         $data['partner'] = Partner::all();
         return view('front.home')->with('data',$data);
     }

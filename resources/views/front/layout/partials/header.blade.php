@@ -1,6 +1,6 @@
 <header class="header d-flex">
   <div class="header__logo">
-    <a href="index.html">
+    <a href="{{route('home')}}">
       <img src="{{asset('front/webImages/logo.webp')}}" alt="logo.webp" />
     </a>
   </div>
