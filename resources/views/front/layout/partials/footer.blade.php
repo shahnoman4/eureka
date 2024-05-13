@@ -3,13 +3,10 @@
     <div class="footer__top">
       <div class="footer__topB">
         <div class="h2">
-          Transformation of the upstream sector through innovation,
-          collaboration, and sustainable practices.
+          {{$footer->description_1}}
         </div>
         <p>
-          With a focus on driving efficiency and maximizing value for
-          clients, the company is poised to shape the future of energy
-          exploration and production in the MENA and GCC regions and beyond.
+          {{$footer->description_2}}
         </p>
       </div>
       <div class="footer__topB">
@@ -40,7 +37,7 @@
             <h5 class="h5">Call Us Now</h5>
             <ul class="list">
               <li>
-                <a dir="ltr" href="tel:+971565112065">+971565112065</a>
+                <a dir="ltr" href="tel:{{$footer->contact_no}}">{{$footer->contact_no}}</a>
               </li>
             </ul>
           </div>
@@ -53,8 +50,8 @@
             <h5 class="h5">Say Hello!</h5>
             <ul class="list">
               <li>
-                <a dir="ltr" href="mailto:info@eureka-mellon.com"
-                  >info@eureka-mellon.com</a
+                <a dir="ltr" href="mailto:{{$footer->contact_email}}"
+                  >{{$footer->contact_email}}</a
                 >
               </li>
             </ul>
