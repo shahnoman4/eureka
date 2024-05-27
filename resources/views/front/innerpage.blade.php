@@ -15,7 +15,7 @@
 <!-- page content -->
 <main class="indexPage">
   <section class="InnerBanner">
-      <img src="{{asset('storage/'.$data['innerpage']->banner_image)}}" class="img1" alt="drillingbanner.webp">
+      <img src="{{url('public/storage/'.$data['innerpage']->banner_image)}}" class="img1" alt="drillingbanner.webp">
       <ul class="list d-flex">
           <li><a href="{{route('home')}}">Home &nbsp;-</a></li>
           <li><a href="{{route('oilgas')}}">Oil  & Gas &nbsp;-</a></li>
@@ -46,7 +46,7 @@
                     <p>{!! $row->description !!} </p>
                 </div>
                 <div class="accordion1BoxBody_r">
-                    <img src="{{asset('storage/'.$row->image)}}" alt="">
+                    <img src="{{url('public/storage/'.$row->image)}}" alt="">
                 </div>
             </div>
               
@@ -59,7 +59,7 @@
             <div class="accordion1Boxhicon"><i class="fa-solid fa-arrow-left"></i></div>
           </div>
           <div class="accordion1BoxBody">
-                <img src="{{asset('storage/'.$row->image)}}" class="radius" alt="">
+                <img src="{{url('public/storage/'.$row->image)}}" class="radius" alt="">
                 <p>{!! $row->description !!}</p>
           </div>
         </div>

@@ -63,7 +63,7 @@
     <div class="footer__bottom">
       <div class="footer__bottomlogo">
         <a href="{{route('home')}}">
-          <img src="{{asset('front/webImages/LOGO2.webp')}}" alt="LOGO2.webp" />
+          <img src="{{url('public/front/webImages/LOGO2.webp')}}" alt="LOGO2.webp" />
         </a>
       </div>
       <ul class="list d-flex">

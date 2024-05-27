@@ -15,7 +15,7 @@
 <!-- page content -->
 <main class="indexPage">
   <section class="banner">
-    <img src="storage/{{$data['home']->banner_image}}" class="img1" alt="banner.webp">
+    <img src="public/storage/{{$data['home']->banner_image}}" class="img1" alt="banner.webp">
     <div class="bannerTxt">
       <span>{{$data['home']->banner_text1}}</span>
       <p class="m-0">{{$data['home']->banner_text2}}</p>
@@ -48,7 +48,7 @@
         <div class="section13Mainr">
           <a href="{{route('about')}}" class="section4_lB">
             <div class="h6 m-0">About Us</div>
-            <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
+            <img src="{{url('public/front/webImages/arrow.webp')}}" alt="arrow.webp" />
           </a>
         </div>
       </div>
@@ -58,19 +58,19 @@
   <section class="section14">
     <div class="section14Main">
       <a href="{{route('oilgas')}}" class="section14MainBox">
-        <img src="{{asset('front/webImages/services/1.webp')}}" alt="1.webp" />
+        <img src="{{url('public/front/webImages/services/1.webp')}}" alt="1.webp" />
         <h4>Oil & Gas</h4>
       </a>
       <a href="{{route('geothermal')}}" class="section14MainBox">
-        <img src="{{asset('front/webImages/services/2.webp')}}" alt="2.webp" />
+        <img src="{{url('public/front/webImages/services/2.webp')}}" alt="2.webp" />
         <h4>Geothermal</h4>
       </a>
       <a href="{{route('wind')}}" class="section14MainBox">
-        <img src="{{asset('front/webImages/services/3.webp')}}" alt="3.webp" />
+        <img src="{{url('public/front/webImages/services/3.webp')}}" alt="3.webp" />
         <h4>Renewables</h4>
       </a>
       <a href="{{route('technologies')}}" class="section14MainBox">
-        <img src="{{asset('front/webImages/services/4.webp')}}" alt="4.webp" />
+        <img src="{{url('public/front/webImages/services/4.webp')}}" alt="4.webp" />
         <h4>Technologies</h4>
       </a>
     </div>
@@ -90,7 +90,7 @@
     <div class="container">
       <div class="section16Main">
         <div class="section16Mainl">
-            <img src="storage\{{$data['home']->section2_image}}" alt="">
+            <img src="public/storage\{{$data['home']->section2_image}}" alt="">
 
             <div class="section16Mainlb">
                 Our <br> Partners
@@ -108,8 +108,8 @@
   <section class="section17">
     @foreach($data['partner'] as $row)
     <div class="section17Box">
-        <img src="{{asset('storage/'.$row->image)}}" class="img1" alt="">
-        <img src="{{asset('storage/'.$row->logo)}}" class="img2" alt="">
+        <img src="{{url('public/storage/'.$row->image)}}" class="img1" alt="">
+        <img src="{{url('public/storage/'.$row->logo)}}" class="img2" alt="">
         <div class="h4">{!!$row->title!!}</div>
     </div>
     @endforeach
@@ -128,7 +128,7 @@
           <div class="section4_lM d-flex">
             <a href="{{route('career')}}" class="section4_lB">
               <div class="h6 m-0">Career</div>
-              <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
+              <img src="{{url('public/front/webImages/arrow.webp')}}" alt="arrow.webp" />
             </a>
             <div class="section4_lMr">
               <p>
@@ -140,7 +140,7 @@
         <!-- close section4_l   -->
 
         <div class="section4_r">
-          <img src="{{asset('front/webImages/3.webp')}}" alt="3.webp')}}" />
+          <img src="{{url('public/front/webImages/3.webp')}}" alt="3.webp')}}" />
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@
     </div>
   </section>
   <section class="section2">
-    <img src="storage/{{$data['about']->section2_image}}" alt="1" />
+    <img src="public/storage/{{$data['about']->section2_image}}" alt="1" />
     <div class="section2Main">
       <div class="container d-flex">
         <div class="section2MainBox">
@@ -58,7 +58,7 @@
           </div>
         </div>
         <div class="section3__right">
-          <img src="storage/{{$data['about']->section3_image}}" alt="" />
+          <img src="public/storage/{{$data['about']->section3_image}}" alt="" />
         </div>
       </div>
       <div class="section32">
@@ -105,7 +105,7 @@
           <div class="section4_lM d-flex">
             <a href="{{route('career')}}" class="section4_lB">
               <div class="h6 m-0">Career</div>
-              <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
+              <img src="{{url('public/front/webImages/arrow.webp')}}" alt="arrow.webp" />
             </a>
             <div class="section4_lMr">
               <p>
@@ -122,7 +122,7 @@
         <!-- close section4_l   -->
 
         <div class="section4_r">
-          <img src="{{asset('front/webImages/3.webp')}}" alt="3.webp" />
+          <img src="{{url('public/front/webImages/3.webp')}}" alt="3.webp" />
         </div>
       </div>
     </div>

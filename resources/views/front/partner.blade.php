@@ -29,14 +29,14 @@
           @if($index % 2 == 0) 
            <div class="partners1Main">
                <div class="partners1Main__left">
-                  <img src="{{asset('storage/'.$row->logo)}}" class="img2" alt="">
+                  <img src="{{url('public/storage/'.$row->logo)}}" class="img2" alt="">
                   <p>{!!$row->description!!}</p>
                   <!-- <a href="#" class="btn btn-secondary">Explore more</a> -->
               </div>
               <div class="partners1Main__right">
                   <div class="section17Box">
-                      <img src="{{asset('storage/'.$row->image)}}" class="img1" alt="">
-                      <img src="{{asset('storage/'.$row->logo)}}" class="img2" alt="">
+                      <img src="{{url('public/storage/'.$row->image)}}" class="img1" alt="">
+                      <img src="{{url('public/storage/'.$row->logo)}}" class="img2" alt="">
                       <div class="h4">{!!$row->title!!}</div>
                   </div>
               </div>
@@ -45,13 +45,13 @@
            <div class="partners1Main">
               <div class="partners1Main__right">
                   <div class="section17Box">
-                      <img src="{{asset('storage/'.$row->image)}}" class="img1" alt="">
-                      <img src="{{asset('storage/'.$row->logo)}}" class="img2" alt="">
+                      <img src="{{url('public/storage/'.$row->image)}}" class="img1" alt="">
+                      <img src="{{url('public/storage/'.$row->logo)}}" class="img2" alt="">
                       <div class="h4">{!!$row->title!!}</div>
                   </div>
               </div>
               <div class="partners1Main__left">
-                  <img src="{{asset('storage/'.$row->logo)}}" style="width: 13rem;" class="img2" alt="">
+                  <img src="{{url('public/storage/'.$row->logo)}}" style="width: 13rem;" class="img2" alt="">
                   <p>{!!$row->description!!}</p>
                   <!-- <a href="#" class="btn btn-secondary">Explore more</a> -->
 
@@ -70,7 +70,7 @@
 
         <div class="section4_ section4_22">
           <div class="section4_r">
-            <img src="{{asset('storage/'.$data['partnerpage']->supplier_image)}}" alt="6.webp" />
+            <img src="{{url('public/storage/'.$data['partnerpage']->supplier_image)}}" alt="6.webp" />
           </div>
           <div class="section4_l">
             <div class="h5">
@@ -80,7 +80,7 @@
             <div class="section4_lM d-flex">
               <a href="#"  class="section4_lB" data-toggle="modal" data-target="#exampleModal">
                 <div class="h6 m-0">Supplier Form</div>
-                <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
+                <img src="{{url('public/front/webImages/arrow.webp')}}" alt="arrow.webp" />
               </a>
               <div class="section4_lMr">
                 <p>
@@ -122,7 +122,7 @@
           <div class="section13Mainr">
             <a href="{{route('about')}}" class="section4_lB">
               <div class="h6 m-0">About Us</div>
-              <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
+              <img src="{{url('public/front/webImages/arrow.webp')}}" alt="arrow.webp" />
             </a>
           </div>
         </div>
@@ -146,10 +146,13 @@
                         
             <div class="modal-body">
               <input type="text" name="name" class="form-control custom-form-control" id="name" placeholder="Full Name" required="required"/>
+              <span class="name" style="color:red;"></span>
               <br />
               <input type="text" name="number" required="required" class="form-control custom-form-control" id="number" placeholder="Number"/>
+              <span class="number" style="color:red;"></span>
               <br />
               <input type="email" name="email" required="required" class="form-control custom-form-control" id="email" placeholder="Email"/>
+              <span class="email" style="color:red;"></span>
             </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary" id="add_form_btn"><span>Submit</span></button>

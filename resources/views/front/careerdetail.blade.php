@@ -16,14 +16,14 @@
     <section class="careerPage">
         <div class="container">
             <br>
-            <img width="100%" height="30%" src="{{asset('front/webImages/career/1.webp')}}" alt="">
+            <img width="100%" height="30%" src="{{url('public/front/webImages/career/1.webp')}}" alt="">
             <div class="h4">CURRENT OPENINGS</div>
             <h1>{!!$data['jobdetail']->title_2!!}</h1>
 
                 <ul class="list d-flex careerPage2_">
                     <li>{!!$data['jobdetail']->job_type!!}</li>
                     <li>
-                        <img src="{{asset('front/webImages/career/image344.png')}}" alt="flag">
+                        <img src="{{url('public/front/webImages/career/image344.png')}}" alt="flag">
                         {!!$data['jobdetail']->location!!}
                     </li>
                 </ul>
@@ -76,7 +76,7 @@
         <div class="section22__left">
           <a class="section4_lB">
             <div class="h6 m-0" style="font-size: 1rem;">Submit CV</div>
-            <img src="{{asset('front/webImages/arrow.webp')}}" alt="arrow.webp" />
+            <img src="{{url('public/front/webImages/arrow.webp')}}" alt="arrow.webp" />
           </a>
           <div class="section22__leftBox">
             <div class="h2">
@@ -89,7 +89,7 @@
         </div>
 
         <div class="section22__right">
-          <img src="{{asset('storage/'.$data['career']->image_2)}}" alt="" />
+          <img src="{{url('public/storage/'.$data['career']->image_2)}}" alt="" />
         </div>
       </div>
     </div>
@@ -112,12 +112,15 @@
                         
             <div class="modal-body">
               <input type="text" name="name" class="form-control custom-form-control" id="name" placeholder="Full Name" required/>
+              <span class="name" style="color:red;"></span>
               <br />
              
               <input type="email" name="email" required="required" class="form-control custom-form-control" id="email" placeholder="Email"/>
+              <span class="email" style="color:red;"></span>
               <br />
-              <span class="cv">CV *</span>
+              <span class="">CV *</span>
               <input type="file" name="cv" required="required">
+              <span class="cv" style="color:red;"></span>
             </div>
             <input type="hidden" name="job_id" id="job_id" value="{{$data['career']->id}}">
           <div class="modal-footer">

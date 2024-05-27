@@ -14,7 +14,7 @@
 <!-- page content -->
 <main class="indexPage">
   <section class="InnerBanner">
-    <img src="storage/{{$data['technology']->banner_image}}" class="img1" alt="banner2.webp" />
+    <img src="public/storage/{{$data['technology']->banner_image}}" class="img1" alt="banner2.webp" />
     <div class="InnerBanner2_">
       <div class="container">
         <h1>
@@ -36,23 +36,23 @@
       </div>
       <div class="Innersection1_2">
         <a href="{{route('innerpage', ['slug' => 'drilling-technologies'])}}" class="section14MainBox">
-          <img src="{{asset('front/webImages/Drilling/1.webp')}}" alt="1.webp" />
+          <img src="{{url('public/front/webImages/Drilling/1.webp')}}" alt="1.webp" />
           <h4>Drilling</h4>
         </a>
         <a href="{{route('innerpage', ['slug' => 'completion-technologies'])}}" class="section14MainBox">
-          <img src="{{asset('front/webImages/Drilling/2.webp')}}" alt="1.webp" />
+          <img src="{{url('public/front/webImages/Drilling/2.webp')}}" alt="1.webp" />
           <h4>Completions</h4>
         </a>
         <a href="{{route('innerpage', ['slug' => 'topside-technologies'])}}" class="section14MainBox">
-          <img src="{{asset('front/webImages/Drilling/3.webp')}}" alt="1.webp" />
+          <img src="{{url('public/front/webImages/Drilling/3.webp')}}" alt="1.webp" />
           <h4>Topside</h4>
         </a>
         <a href="{{route('innerpage', ['slug' => 'landside-technologies'])}}" class="section14MainBox">
-          <img src="{{asset('front/webImages/Drilling/4.webp')}}" alt="1.webp" />
+          <img src="{{url('public/front/webImages/Drilling/4.webp')}}" alt="1.webp" />
           <h4>Landside</h4>
         </a>
         <a href="#" class="section14MainBox">
-          <img src="{{asset('front/webImages/Drilling/5.webp')}}" alt="1.webp" />
+          <img src="{{url('public/front/webImages/Drilling/5.webp')}}" alt="1.webp" />
           <h4>Renewable Technology</h4>
         </a>
       </div>
