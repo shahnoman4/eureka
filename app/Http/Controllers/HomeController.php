@@ -81,6 +81,7 @@ class HomeController extends Controller
 
     public function about(){
         $data['about'] = About::findOrFail(1);
+        $data['career'] = Career::findOrFail(1);
         return view('front.about')->with('data',$data);
     }
 
